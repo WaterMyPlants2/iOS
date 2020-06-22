@@ -16,6 +16,7 @@
 		7F9278AA24A1113800E22D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9278A824A1113800E22D33 /* LaunchScreen.storyboard */; };
 		7F9278B524A1113800E22D33 /* WMP34Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278B424A1113800E22D33 /* WMP34Tests.swift */; };
 		7F9278C024A1113800E22D33 /* WMP34UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278BF24A1113800E22D33 /* WMP34UITests.swift */; };
+		C4BF41E824A132E20070FCE9 /* MyPlantsTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BF41E724A132E20070FCE9 /* MyPlantsTableView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7F9278BB24A1113800E22D33 /* WMP34UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WMP34UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9278BF24A1113800E22D33 /* WMP34UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMP34UITests.swift; sourceTree = "<group>"; };
 		7F9278C124A1113800E22D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4BF41E724A132E20070FCE9 /* MyPlantsTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPlantsTableView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		7F92789924A1113700E22D33 /* WMP34 */ = {
 			isa = PBXGroup;
 			children = (
+				C4BF41E624A1320C0070FCE9 /* Storyboards */,
 				7F92789A24A1113700E22D33 /* AppDelegate.swift */,
 				7F92789C24A1113700E22D33 /* SceneDelegate.swift */,
 				7F92789E24A1113800E22D33 /* ViewController.swift */,
@@ -129,6 +132,14 @@
 				7F9278C124A1113800E22D33 /* Info.plist */,
 			);
 			path = WMP34UITests;
+			sourceTree = "<group>";
+		};
+		C4BF41E624A1320C0070FCE9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C4BF41E724A132E20070FCE9 /* MyPlantsTableView.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 			files = (
 				7F9278AA24A1113800E22D33 /* LaunchScreen.storyboard in Resources */,
 				7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */,
+				C4BF41E824A132E20070FCE9 /* MyPlantsTableView.storyboard in Resources */,
 				7F9278A224A1113800E22D33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
