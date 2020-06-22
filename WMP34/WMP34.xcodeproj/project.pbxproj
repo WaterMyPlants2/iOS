@@ -16,6 +16,8 @@
 		7F9278AA24A1113800E22D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9278A824A1113800E22D33 /* LaunchScreen.storyboard */; };
 		7F9278B524A1113800E22D33 /* WMP34Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278B424A1113800E22D33 /* WMP34Tests.swift */; };
 		7F9278C024A1113800E22D33 /* WMP34UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278BF24A1113800E22D33 /* WMP34UITests.swift */; };
+		BE1B0CD524A14257004FCBC1 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B0CD424A14257004FCBC1 /* UserController.swift */; };
+		BE1B0CD724A14261004FCBC1 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B0CD624A14261004FCBC1 /* PlantController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		7F9278BB24A1113800E22D33 /* WMP34UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WMP34UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9278BF24A1113800E22D33 /* WMP34UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMP34UITests.swift; sourceTree = "<group>"; };
 		7F9278C124A1113800E22D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE1B0CD424A14257004FCBC1 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		BE1B0CD624A14261004FCBC1 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		7F92789924A1113700E22D33 /* WMP34 */ = {
 			isa = PBXGroup;
 			children = (
+				BE1B0CD324A1424D004FCBC1 /* Controller */,
+				BE1B0CD224A14241004FCBC1 /* Model */,
 				7F92789A24A1113700E22D33 /* AppDelegate.swift */,
 				7F92789C24A1113700E22D33 /* SceneDelegate.swift */,
 				7F92789E24A1113800E22D33 /* ViewController.swift */,
@@ -108,7 +114,6 @@
 				7F9278A624A1113800E22D33 /* Assets.xcassets */,
 				7F9278A824A1113800E22D33 /* LaunchScreen.storyboard */,
 				7F9278AB24A1113800E22D33 /* Info.plist */,
-				7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */,
 			);
 			path = WMP34;
 			sourceTree = "<group>";
@@ -129,6 +134,23 @@
 				7F9278C124A1113800E22D33 /* Info.plist */,
 			);
 			path = WMP34UITests;
+			sourceTree = "<group>";
+		};
+		BE1B0CD224A14241004FCBC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE1B0CD324A1424D004FCBC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE1B0CD424A14257004FCBC1 /* UserController.swift */,
+				BE1B0CD624A14261004FCBC1 /* PlantController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +286,8 @@
 			files = (
 				7F92789F24A1113800E22D33 /* ViewController.swift in Sources */,
 				7F9278A524A1113800E22D33 /* WMP34.xcdatamodeld in Sources */,
+				BE1B0CD524A14257004FCBC1 /* UserController.swift in Sources */,
+				BE1B0CD724A14261004FCBC1 /* PlantController.swift in Sources */,
 				7F92789B24A1113700E22D33 /* AppDelegate.swift in Sources */,
 				7F92789D24A1113700E22D33 /* SceneDelegate.swift in Sources */,
 			);
