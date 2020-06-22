@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5051733F24A13220004F068B /* Login-Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5051733E24A13220004F068B /* Login-Register.storyboard */; };
 		7F92789B24A1113700E22D33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789A24A1113700E22D33 /* AppDelegate.swift */; };
 		7F92789D24A1113700E22D33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789C24A1113700E22D33 /* SceneDelegate.swift */; };
 		7F92789F24A1113800E22D33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789E24A1113800E22D33 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5051733E24A13220004F068B /* Login-Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Login-Register.storyboard"; sourceTree = "<group>"; };
 		7F92789724A1113700E22D33 /* WMP34.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WMP34.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F92789A24A1113700E22D33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F92789C24A1113700E22D33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				7F9278A824A1113800E22D33 /* LaunchScreen.storyboard */,
 				7F9278AB24A1113800E22D33 /* Info.plist */,
 				7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */,
+				5051733E24A13220004F068B /* Login-Register.storyboard */,
 			);
 			path = WMP34;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */,
 				C4BF41E824A132E20070FCE9 /* MyPlantsTableView.storyboard in Resources */,
 				7F9278A224A1113800E22D33 /* Main.storyboard in Resources */,
+				5051733F24A13220004F068B /* Login-Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
