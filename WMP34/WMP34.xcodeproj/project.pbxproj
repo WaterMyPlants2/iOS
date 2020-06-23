@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5051733F24A13220004F068B /* Login-Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5051733E24A13220004F068B /* Login-Register.storyboard */; };
 		5051734124A1487C004F068B /* RegisterNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051734024A1487C004F068B /* RegisterNewUserViewController.swift */; };
 		5051734324A148F9004F068B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051734224A148F8004F068B /* SignInViewController.swift */; };
+		7F6B076D24A17A8B00975947 /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B076C24A17A8B00975947 /* NetworkDataLoader.swift */; };
+		7F6B076F24A17AA000975947 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B076E24A17AA000975947 /* URLSession.swift */; };
 		7F92789B24A1113700E22D33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789A24A1113700E22D33 /* AppDelegate.swift */; };
 		7F92789D24A1113700E22D33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789C24A1113700E22D33 /* SceneDelegate.swift */; };
-		7F92789F24A1113800E22D33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789E24A1113800E22D33 /* ViewController.swift */; };
 		7F9278A224A1113800E22D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9278A024A1113800E22D33 /* Main.storyboard */; };
 		7F9278A524A1113800E22D33 /* WMP34.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */; };
 		7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9278A624A1113800E22D33 /* Assets.xcassets */; };
@@ -42,13 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5051733E24A13220004F068B /* Login-Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Login-Register.storyboard"; sourceTree = "<group>"; };
 		5051734024A1487C004F068B /* RegisterNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewUserViewController.swift; sourceTree = "<group>"; };
 		5051734224A148F8004F068B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7F6B076C24A17A8B00975947 /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
+		7F6B076E24A17AA000975947 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		7F92789724A1113700E22D33 /* WMP34.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WMP34.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F92789A24A1113700E22D33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F92789C24A1113700E22D33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7F92789E24A1113800E22D33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F9278A124A1113800E22D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F9278A424A1113800E22D33 /* WMP34.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WMP34.xcdatamodel; sourceTree = "<group>"; };
 		7F9278A624A1113800E22D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F6B076B24A17A7800975947 /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				7F6B076C24A17A8B00975947 /* NetworkDataLoader.swift */,
+				7F6B076E24A17AA000975947 /* URLSession.swift */,
+			);
+			name = Mocking;
+			sourceTree = "<group>";
+		};
 		7F92788E24A1113700E22D33 = {
 			isa = PBXGroup;
 			children = (
@@ -113,18 +122,17 @@
 		7F92789924A1113700E22D33 /* WMP34 */ = {
 			isa = PBXGroup;
 			children = (
+				7F6B076B24A17A7800975947 /* Mocking */,
 				C4BF41F324A1468B0070FCE9 /* ViewControllers */,
 				C4BF41F024A1466C0070FCE9 /* Cells */,
 				C4BF41E624A1320C0070FCE9 /* Storyboards */,
 				7F92789A24A1113700E22D33 /* AppDelegate.swift */,
 				7F92789C24A1113700E22D33 /* SceneDelegate.swift */,
-				7F92789E24A1113800E22D33 /* ViewController.swift */,
 				7F9278A024A1113800E22D33 /* Main.storyboard */,
 				7F9278A624A1113800E22D33 /* Assets.xcassets */,
 				7F9278A824A1113800E22D33 /* LaunchScreen.storyboard */,
 				7F9278AB24A1113800E22D33 /* Info.plist */,
 				7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */,
-				5051733E24A13220004F068B /* Login-Register.storyboard */,
 				5051734024A1487C004F068B /* RegisterNewUserViewController.swift */,
 				5051734224A148F8004F068B /* SignInViewController.swift */,
 			);
@@ -281,7 +289,6 @@
 				7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */,
 				C4BF41E824A132E20070FCE9 /* MyPlantsTableView.storyboard in Resources */,
 				7F9278A224A1113800E22D33 /* Main.storyboard in Resources */,
-				5051733F24A13220004F068B /* Login-Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,11 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F92789F24A1113800E22D33 /* ViewController.swift in Sources */,
 				5051734124A1487C004F068B /* RegisterNewUserViewController.swift in Sources */,
+				7F6B076F24A17AA000975947 /* URLSession.swift in Sources */,
 				5051734324A148F9004F068B /* SignInViewController.swift in Sources */,
 				7F9278A524A1113800E22D33 /* WMP34.xcdatamodeld in Sources */,
 				7F92789B24A1113700E22D33 /* AppDelegate.swift in Sources */,
+				7F6B076D24A17A8B00975947 /* NetworkDataLoader.swift in Sources */,
 				7F92789D24A1113700E22D33 /* SceneDelegate.swift in Sources */,
 				C4BF41F224A146860070FCE9 /* MyPlantCollectionViewCell.swift in Sources */,
 				C4BF41EF24A145D60070FCE9 /* TestingViewController.swift in Sources */,
@@ -418,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -472,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -487,7 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HL3XLM68NV;
+				DEVELOPMENT_TEAM = RY46L4DS7N;
 				INFOPLIST_FILE = WMP34/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,7 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HL3XLM68NV;
+				DEVELOPMENT_TEAM = RY46L4DS7N;
 				INFOPLIST_FILE = WMP34/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -526,7 +534,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
 				INFOPLIST_FILE = WMP34Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,7 +555,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
 				INFOPLIST_FILE = WMP34Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
