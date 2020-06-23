@@ -19,6 +19,11 @@
 		7F9278AA24A1113800E22D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9278A824A1113800E22D33 /* LaunchScreen.storyboard */; };
 		7F9278B524A1113800E22D33 /* WMP34Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278B424A1113800E22D33 /* WMP34Tests.swift */; };
 		7F9278C024A1113800E22D33 /* WMP34UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278BF24A1113800E22D33 /* WMP34UITests.swift */; };
+		C45488A024A2744800C29ACE /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C454889F24A2744800C29ACE /* User+Convenience.swift */; };
+		C45488A224A2746F00C29ACE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45488A124A2746F00C29ACE /* CoreDataStack.swift */; };
+		C45488A424A274E000C29ACE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45488A324A274E000C29ACE /* NetworkError.swift */; };
+		C45488A624A2751100C29ACE /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45488A524A2751100C29ACE /* UserRepresentation.swift */; };
+		C45488A824A2753B00C29ACE /* LoginRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45488A724A2753B00C29ACE /* LoginRepresentation.swift */; };
 		C4BF41E824A132E20070FCE9 /* MyPlantsTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BF41E724A132E20070FCE9 /* MyPlantsTableView.storyboard */; };
 		C4BF41EF24A145D60070FCE9 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BF41EE24A145D60070FCE9 /* TestingViewController.swift */; };
 		C4BF41F224A146860070FCE9 /* MyPlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BF41F124A146860070FCE9 /* MyPlantCollectionViewCell.swift */; };
@@ -60,6 +65,11 @@
 		7F9278BB24A1113800E22D33 /* WMP34UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WMP34UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9278BF24A1113800E22D33 /* WMP34UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMP34UITests.swift; sourceTree = "<group>"; };
 		7F9278C124A1113800E22D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C454889F24A2744800C29ACE /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
+		C45488A124A2746F00C29ACE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C45488A324A274E000C29ACE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C45488A524A2751100C29ACE /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		C45488A724A2753B00C29ACE /* LoginRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepresentation.swift; sourceTree = "<group>"; };
 		C4BF41E724A132E20070FCE9 /* MyPlantsTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPlantsTableView.storyboard; sourceTree = "<group>"; };
 		C4BF41EE24A145D60070FCE9 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		C4BF41F124A146860070FCE9 /* MyPlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +132,7 @@
 		7F92789924A1113700E22D33 /* WMP34 */ = {
 			isa = PBXGroup;
 			children = (
+				C454889C24A2709F00C29ACE /* Models */,
 				7F6B076B24A17A7800975947 /* Mocking */,
 				C4BF41F324A1468B0070FCE9 /* ViewControllers */,
 				C4BF41F024A1466C0070FCE9 /* Cells */,
@@ -155,6 +166,34 @@
 				7F9278C124A1113800E22D33 /* Info.plist */,
 			);
 			path = WMP34UITests;
+			sourceTree = "<group>";
+		};
+		C454889C24A2709F00C29ACE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C454889E24A2742100C29ACE /* Error */,
+				C454889D24A2741300C29ACE /* Representations */,
+				C454889F24A2744800C29ACE /* User+Convenience.swift */,
+				C45488A124A2746F00C29ACE /* CoreDataStack.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C454889D24A2741300C29ACE /* Representations */ = {
+			isa = PBXGroup;
+			children = (
+				C45488A524A2751100C29ACE /* UserRepresentation.swift */,
+				C45488A724A2753B00C29ACE /* LoginRepresentation.swift */,
+			);
+			path = Representations;
+			sourceTree = "<group>";
+		};
+		C454889E24A2742100C29ACE /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C45488A324A274E000C29ACE /* NetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		C4BF41E624A1320C0070FCE9 /* Storyboards */ = {
@@ -314,12 +353,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5051734124A1487C004F068B /* RegisterNewUserViewController.swift in Sources */,
+				C45488A624A2751100C29ACE /* UserRepresentation.swift in Sources */,
 				7F6B076F24A17AA000975947 /* URLSession.swift in Sources */,
 				5051734324A148F9004F068B /* SignInViewController.swift in Sources */,
 				7F9278A524A1113800E22D33 /* WMP34.xcdatamodeld in Sources */,
+				C45488A024A2744800C29ACE /* User+Convenience.swift in Sources */,
 				7F92789B24A1113700E22D33 /* AppDelegate.swift in Sources */,
+				C45488A224A2746F00C29ACE /* CoreDataStack.swift in Sources */,
 				7F6B076D24A17A8B00975947 /* NetworkDataLoader.swift in Sources */,
 				7F92789D24A1113700E22D33 /* SceneDelegate.swift in Sources */,
+				C45488A824A2753B00C29ACE /* LoginRepresentation.swift in Sources */,
+				C45488A424A274E000C29ACE /* NetworkError.swift in Sources */,
 				C4BF41F224A146860070FCE9 /* MyPlantCollectionViewCell.swift in Sources */,
 				C4BF41EF24A145D60070FCE9 /* TestingViewController.swift in Sources */,
 			);
