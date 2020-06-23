@@ -14,6 +14,10 @@ class UserController {
     
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
     
+    var token: String?
+    
+    static let shared = UserController()
+    
     // MARK: - API Functions
     
     func registerUser(username: String, password: String, phonenumber: String,
@@ -78,13 +82,13 @@ class UserController {
                 return
             }
             
-            do {
-                // decode/set bearer token here
-            } catch {
-                NSLog("Errpr decoding bearer object: \(error)")
+            guard let decodedToken = String(data: data, encoding: String.Encoding.utf8) else {
+                NSLog("Error decoding bearer object: \(String(describing: error))")
                 completion(.failure(.failedDecode))
                 return
             }
+            
+            self.token = decodedToken
             
             completion(.success(true))
         }.resume()
