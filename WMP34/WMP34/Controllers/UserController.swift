@@ -14,6 +14,10 @@ class UserController {
     
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
     
+    var token: LoginRepresentation?
+    
+    static let shared = UserController()
+    
     // MARK: - API Functions
     
     func registerUser(username: String, password: String, phonenumber: String,
@@ -53,12 +57,11 @@ class UserController {
         
         var request = URLRequest(url: loginURL)
         request.httpMethod = "POST"
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
         
         do {
-            let loginRepresentation = LoginRepresentation(username: username,
-                                                          password: password)
-            request.httpBody = try JSONEncoder().encode(loginRepresentation)
+            let login = ["grant_type" : "password", "username" : username, "password" : password]
+            request.httpBody = try JSONEncoder().encode(login)
         } catch {
             NSLog("Error encoding user \(error)")
             completion(.failure(.failedEncode))
@@ -79,9 +82,10 @@ class UserController {
             }
             
             do {
-                // decode/set bearer token here
+                self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
+                completion(.success(true))
             } catch {
-                NSLog("Errpr decoding bearer object: \(error)")
+                NSLog("Error decoding login response: \(error)")
                 completion(.failure(.failedDecode))
                 return
             }
