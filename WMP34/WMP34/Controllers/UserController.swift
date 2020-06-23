@@ -14,7 +14,7 @@ class UserController {
     
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
     
-    var token: String?
+    var token: LoginRepresentation?
     
     static let shared = UserController()
     
@@ -57,12 +57,11 @@ class UserController {
         
         var request = URLRequest(url: loginURL)
         request.httpMethod = "POST"
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
         
         do {
-            let loginRepresentation = LoginRepresentation(username: username,
-                                                          password: password)
-            request.httpBody = try JSONEncoder().encode(loginRepresentation)
+            let login = ["grant_type" : "password", "username" : username, "password" : password]
+            request.httpBody = try JSONEncoder().encode(login)
         } catch {
             NSLog("Error encoding user \(error)")
             completion(.failure(.failedEncode))
@@ -82,13 +81,14 @@ class UserController {
                 return
             }
             
-            guard let decodedToken = String(data: data, encoding: String.Encoding.utf8) else {
-                NSLog("Error decoding bearer object: \(String(describing: error))")
+            do {
+                self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
+                completion(.success(true))
+            } catch {
+                NSLog("Error decoding login response: \(error)")
                 completion(.failure(.failedDecode))
                 return
             }
-            
-            self.token = decodedToken
             
             completion(.success(true))
         }.resume()
