@@ -21,6 +21,8 @@
 		BEC7029124A170DF006DD45A /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7029024A170DF006DD45A /* User+Convenience.swift */; };
 		BEC7029424A17147006DD45A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7029324A17147006DD45A /* CoreDataStack.swift */; };
 		BEC7029724A17537006DD45A /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7029624A17537006DD45A /* NetworkError.swift */; };
+		BEC7029A24A179DB006DD45A /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7029924A179DB006DD45A /* UserRepresentation.swift */; };
+		BEC7029C24A17B5D006DD45A /* LoginRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7029B24A17B5D006DD45A /* LoginRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		BEC7029024A170DF006DD45A /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		BEC7029324A17147006DD45A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BEC7029624A17537006DD45A /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		BEC7029924A179DB006DD45A /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		BEC7029B24A17B5D006DD45A /* LoginRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		BE1B0CD224A14241004FCBC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BEC7029824A179CC006DD45A /* Representations */,
 				BEC7029524A1752C006DD45A /* Error */,
 				7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */,
 				BEC7029024A170DF006DD45A /* User+Convenience.swift */,
@@ -168,6 +173,15 @@
 				BEC7029624A17537006DD45A /* NetworkError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		BEC7029824A179CC006DD45A /* Representations */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7029924A179DB006DD45A /* UserRepresentation.swift */,
+				BEC7029B24A17B5D006DD45A /* LoginRepresentation.swift */,
+			);
+			path = Representations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +321,9 @@
 				BE1B0CD724A14261004FCBC1 /* PlantController.swift in Sources */,
 				7F92789B24A1113700E22D33 /* AppDelegate.swift in Sources */,
 				7F92789D24A1113700E22D33 /* SceneDelegate.swift in Sources */,
+				BEC7029C24A17B5D006DD45A /* LoginRepresentation.swift in Sources */,
 				BEC7029724A17537006DD45A /* NetworkError.swift in Sources */,
+				BEC7029A24A179DB006DD45A /* UserRepresentation.swift in Sources */,
 				BEC7029124A170DF006DD45A /* User+Convenience.swift in Sources */,
 				BEC7029424A17147006DD45A /* CoreDataStack.swift in Sources */,
 			);
