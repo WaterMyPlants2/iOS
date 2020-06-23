@@ -14,7 +14,8 @@ class RegisterNewUserViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var phonenumberTextField: UITextField!
     
-
+    let userController = UserController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +36,18 @@ class RegisterNewUserViewController: UIViewController {
         
         //TODO: Implement method for registering a new user.
         
-        
+        userController.registerUser(username: username, password: password, phonenumber: phonenumber) { (result) in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "ShowLoginVC", sender: nil)
+                }
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Unable to register!", message: "Unable to register, try again later.")
+                }
+            }
+        }
     }
     
     // MARK: - Helper methods
