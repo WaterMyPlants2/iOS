@@ -9,3 +9,6 @@ Bradely D
 Unit 3 Engineers -
 Vincent Hoang
 Kelson Hartle
+
+Lifecycle
+MergeTo(Master) -> New Branch(Day 2 Development) -> Master
