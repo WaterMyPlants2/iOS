@@ -13,7 +13,6 @@
 		7F6B076F24A17AA000975947 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B076E24A17AA000975947 /* URLSession.swift */; };
 		7F92789B24A1113700E22D33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789A24A1113700E22D33 /* AppDelegate.swift */; };
 		7F92789D24A1113700E22D33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789C24A1113700E22D33 /* SceneDelegate.swift */; };
-		7F92789F24A1113800E22D33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92789E24A1113800E22D33 /* ViewController.swift */; };
 		7F9278A224A1113800E22D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9278A024A1113800E22D33 /* Main.storyboard */; };
 		7F9278A524A1113800E22D33 /* WMP34.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */; };
 		7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9278A624A1113800E22D33 /* Assets.xcassets */; };
@@ -50,7 +49,6 @@
 		7F92789724A1113700E22D33 /* WMP34.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WMP34.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F92789A24A1113700E22D33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F92789C24A1113700E22D33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7F92789E24A1113800E22D33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F9278A124A1113800E22D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F9278A424A1113800E22D33 /* WMP34.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WMP34.xcdatamodel; sourceTree = "<group>"; };
 		7F9278A624A1113800E22D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				C4BF41E624A1320C0070FCE9 /* Storyboards */,
 				7F92789A24A1113700E22D33 /* AppDelegate.swift */,
 				7F92789C24A1113700E22D33 /* SceneDelegate.swift */,
-				7F92789E24A1113800E22D33 /* ViewController.swift */,
 				7F9278A024A1113800E22D33 /* Main.storyboard */,
 				7F9278A624A1113800E22D33 /* Assets.xcassets */,
 				7F9278A824A1113800E22D33 /* LaunchScreen.storyboard */,
@@ -316,7 +313,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F92789F24A1113800E22D33 /* ViewController.swift in Sources */,
 				5051734124A1487C004F068B /* RegisterNewUserViewController.swift in Sources */,
 				7F6B076F24A17AA000975947 /* URLSession.swift in Sources */,
 				5051734324A148F9004F068B /* SignInViewController.swift in Sources */,
