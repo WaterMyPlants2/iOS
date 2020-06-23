@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5051733F24A13220004F068B /* Login-Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5051733E24A13220004F068B /* Login-Register.storyboard */; };
 		5051734124A1487C004F068B /* RegisterNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051734024A1487C004F068B /* RegisterNewUserViewController.swift */; };
 		5051734324A148F9004F068B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051734224A148F8004F068B /* SignInViewController.swift */; };
 		7F6B076D24A17A8B00975947 /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B076C24A17A8B00975947 /* NetworkDataLoader.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5051733E24A13220004F068B /* Login-Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Login-Register.storyboard"; sourceTree = "<group>"; };
 		5051734024A1487C004F068B /* RegisterNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewUserViewController.swift; sourceTree = "<group>"; };
 		5051734224A148F8004F068B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		7F6B076C24A17A8B00975947 /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				7F9278A824A1113800E22D33 /* LaunchScreen.storyboard */,
 				7F9278AB24A1113800E22D33 /* Info.plist */,
 				7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */,
-				5051733E24A13220004F068B /* Login-Register.storyboard */,
 				5051734024A1487C004F068B /* RegisterNewUserViewController.swift */,
 				5051734224A148F8004F068B /* SignInViewController.swift */,
 			);
@@ -295,7 +292,6 @@
 				7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */,
 				C4BF41E824A132E20070FCE9 /* MyPlantsTableView.storyboard in Resources */,
 				7F9278A224A1113800E22D33 /* Main.storyboard in Resources */,
-				5051733F24A13220004F068B /* Login-Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
