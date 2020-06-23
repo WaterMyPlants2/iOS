@@ -15,7 +15,6 @@ class UserController {
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
     
     // MARK: - API Functions
-    
     func registerUser(username: String, password: String, phonenumber: String,
                       completion: @escaping CompletionHandler = { _ in }) {
         let registerURL = URL(string: "/api/auth/register", relativeTo: baseURL)!

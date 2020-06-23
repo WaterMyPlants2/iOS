@@ -13,6 +13,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
+    let userController = UserController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +31,22 @@ class SignInViewController: UIViewController {
                 showAlert(title: "Unable to Login", message: "Please try again.")
                 return
         }
-        //TODO: Implement method for logging in user.
-
-        
-        
-        
-        
+        userController.loginUser(username: username, password: password) { (result) in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                    //TODO: fetch plants from server to display in table view.
+                    //self.userController.fetchPlantsFromServer
+                }
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Login failed", message: "Please try again.")
+                    self.usernameTextField.text = ""
+                    self.passwordTextField.text = ""
+                }
+            }
+        }
     }
     
     /*
@@ -54,5 +65,4 @@ class SignInViewController: UIViewController {
            alert.addAction(UIAlertAction(title: "Ok", style: .default))
            present(alert, animated: true, completion: nil)
        }
-
 }
