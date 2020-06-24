@@ -45,7 +45,7 @@ class UserPlantListTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if necessaryPresentLoginViewController {
+        if !necessaryPresentLoginViewController {
             presentRegisterView()
         }
     }
