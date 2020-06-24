@@ -11,7 +11,9 @@ import CoreData
 
 class PlantController {
     
-    let baseURL = URL(string: "https://jren-watermyplants.herokuapp.com/")!
+    let userController = UserController.shared
+    
+    let baseURL = URL(string: "https://jren-watermyplants.herokuapp.com")!
     
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
     
@@ -28,9 +30,24 @@ class PlantController {
     }
     
     func sendPlantToServer(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
-        /*
-         POST - /api/plants - add a plant given in the request body to current user
-         */
+        guard let token = userController.token?.access_token else {
+            NSLog("Token object was found to be nil, aborting")
+            return
+        }
+        
+        let requestUrl = URL(string: "api/plants", relativeTo: baseURL)!
+        
+        var request = URLRequest(url: requestUrl)
+        request.addValue("application/json", forHTTPHeaderField:
+        "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        do {
+            //request.httpBody = try JSONEncoder().encode(plant)
+        } catch {
+            NSLog("Error encoding plant \(plant): \(error)")
+        }
+        
     }
     
     func deletePlantFromServer(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
