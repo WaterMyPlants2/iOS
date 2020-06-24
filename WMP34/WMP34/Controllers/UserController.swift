@@ -63,18 +63,17 @@ class UserController {
         let base64Auth = encodedAuth.base64EncodedString()
         
         request.addValue("Basic \(base64Auth)", forHTTPHeaderField: "Authorization")
-        
-        do {
-            let login = ["grant_type" : "password", "username" : username, "password" : password]
-            request.httpBody = try JSONEncoder().encode(login)
+
+//            let login = ["grant_type" : "password", "username" : username, "password" : password]
+//            request.httpBody = try JSONEncoder().encode(login)
+//            print(String(data: request.httpBody!, encoding: String.Encoding.utf8))
+//            let jsonData = try JSONSerialization.data(withJSONObject: login, options: .prettyPrinted)
+//            request.httpBody = jsonData
             
-            let jsonData = try JSONSerialization.data(withJSONObject: login, options: .prettyPrinted)
-            request.httpBody = jsonData
-        } catch {
-            NSLog("Error encoding user \(error)")
-            completion(.failure(.failedEncode))
-            return
-        }
+        let loginString = "grant_type=password&username=\(username)&password=\(password)"
+        let loginStringData = loginString.data(using: String.Encoding.utf8)
+            
+        request.httpBody = loginStringData
         
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
@@ -90,7 +89,6 @@ class UserController {
             }
             
             do {
-                print(String(data: data, encoding: String.Encoding.utf8))
                 Self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
                 completion(.success(true))
             } catch {
