@@ -38,6 +38,7 @@ class PlantController {
         let requestUrl = URL(string: "api/plants", relativeTo: baseURL)!
         
         var request = URLRequest(url: requestUrl)
+        request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField:
         "Content-Type")
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
