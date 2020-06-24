@@ -9,6 +9,7 @@
 import Foundation
 
 struct LoginRepresentation: Codable {
-    let username: String
-    let password: String
+    let access_token: String
+    let token_type: String
+    let scope: String
 }
