@@ -22,10 +22,10 @@
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserRole" inverseName="role" inverseEntity="UserRole"/>
     </entity>
     <entity name="SimplePlant" representedClassName="SimplePlant" syncable="YES" codeGenerationType="class">
-        <attribute name="h2ofrequency" optional="YES" attributeType="String"/>
-        <attribute name="image" optional="YES" attributeType="String"/>
-        <attribute name="nickname" optional="YES" attributeType="String"/>
-        <attribute name="species" optional="YES" attributeType="String"/>
+        <attribute name="h2ofrequency" optional="YES"/>
+        <attribute name="image" optional="YES"/>
+        <attribute name="nickname" optional="YES"/>
+        <attribute name="plantid" optional="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="password" optional="YES" attributeType="String"/>
