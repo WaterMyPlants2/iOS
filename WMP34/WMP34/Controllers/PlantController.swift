@@ -28,9 +28,7 @@ class PlantController {
     }
     
     func sendPlantToServer(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
-        /*
-         POST - /api/plants - add a plant given in the request body to current user
-         */
+
     }
     
     func deletePlantFromServer(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {

@@ -74,6 +74,7 @@
 		7F9278BB24A1113800E22D33 /* WMP34UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WMP34UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9278BF24A1113800E22D33 /* WMP34UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMP34UITests.swift; sourceTree = "<group>"; };
 		7F9278C124A1113800E22D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEAFA11324A3FE60005FC95F /* WMP 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMP 2.xcdatamodel"; sourceTree = "<group>"; };
 		C454889F24A2744800C29ACE /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		C45488A124A2746F00C29ACE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C45488A324A274E000C29ACE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -725,6 +726,7 @@
 		7F9278A324A1113800E22D33 /* WMP34.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				BEAFA11324A3FE60005FC95F /* WMP 2.xcdatamodel */,
 				7F9278A424A1113800E22D33 /* WMP34.xcdatamodel */,
 			);
 			currentVersion = 7F9278A424A1113800E22D33 /* WMP34.xcdatamodel */;
