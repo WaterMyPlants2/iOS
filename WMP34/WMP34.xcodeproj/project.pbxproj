@@ -24,6 +24,7 @@
 		7F9278B524A1113800E22D33 /* WMP34Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278B424A1113800E22D33 /* WMP34Tests.swift */; };
 		7F9278C024A1113800E22D33 /* WMP34UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278BF24A1113800E22D33 /* WMP34UITests.swift */; };
 		BEAFA11524A406D0005FC95F /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFA11424A406D0005FC95F /* Plant+Convenience.swift */; };
+		BEAFA11724A408E8005FC95F /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFA11624A408E8005FC95F /* PlantRepresentation.swift */; };
 		C45488A024A2744800C29ACE /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C454889F24A2744800C29ACE /* User+Convenience.swift */; };
 		C45488A224A2746F00C29ACE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45488A124A2746F00C29ACE /* CoreDataStack.swift */; };
 		C45488A424A274E000C29ACE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45488A324A274E000C29ACE /* NetworkError.swift */; };
@@ -77,6 +78,7 @@
 		7F9278C124A1113800E22D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAFA11324A3FE60005FC95F /* WMP 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMP 2.xcdatamodel"; sourceTree = "<group>"; };
 		BEAFA11424A406D0005FC95F /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
+		BEAFA11624A408E8005FC95F /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
 		C454889F24A2744800C29ACE /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		C45488A124A2746F00C29ACE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C45488A324A274E000C29ACE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				C45488A524A2751100C29ACE /* UserRepresentation.swift */,
 				C45488A724A2753B00C29ACE /* LoginRepresentation.swift */,
+				BEAFA11624A408E8005FC95F /* PlantRepresentation.swift */,
 			);
 			path = Representations;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				C45488A624A2751100C29ACE /* UserRepresentation.swift in Sources */,
 				7F6B076F24A17AA000975947 /* URLSession.swift in Sources */,
 				C45488AD24A2766F00C29ACE /* PlantController.swift in Sources */,
+				BEAFA11724A408E8005FC95F /* PlantRepresentation.swift in Sources */,
 				5051734324A148F9004F068B /* SignInViewController.swift in Sources */,
 				BEAFA11524A406D0005FC95F /* Plant+Convenience.swift in Sources */,
 				5051734924A29E31004F068B /* PlantDetailViewController.swift in Sources */,
