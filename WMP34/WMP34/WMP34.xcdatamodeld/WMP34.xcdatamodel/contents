@@ -21,6 +21,12 @@
         <attribute name="rolename" optional="YES" attributeType="String"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserRole" inverseName="role" inverseEntity="UserRole"/>
     </entity>
+    <entity name="SimplePlant" representedClassName="SimplePlant" syncable="YES" codeGenerationType="class">
+        <attribute name="h2ofrequency" optional="YES"/>
+        <attribute name="image" optional="YES"/>
+        <attribute name="nickname" optional="YES"/>
+        <attribute name="plantid" optional="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="passwordNoEncrypt" optional="YES" attributeType="String"/>
@@ -52,5 +58,6 @@
         <element name="UserMinimum" positionX="-133.0390625" positionY="174.4921875" width="128" height="88"/>
         <element name="UserRole" positionX="187.84765625" positionY="139.84765625" width="128" height="73"/>
         <element name="ValidationError" positionX="129.0546875" positionY="268.1953125" width="128" height="88"/>
+        <element name="SimplePlant" positionX="-514.4921875" positionY="-452.8046875" width="128" height="103"/>
     </elements>
 </model>
