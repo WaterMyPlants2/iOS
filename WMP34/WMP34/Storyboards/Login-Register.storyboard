@@ -10,7 +10,7 @@
         <!--RegisterNewUser-->
         <scene sceneID="Pd1-zi-Dui">
             <objects>
-                <viewController id="ULI-Qi-zgh" userLabel="RegisterNewUser" customClass="RegisterNewUserViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" id="ULI-Qi-zgh" userLabel="RegisterNewUser" customClass="RegisterNewUserViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Foz-jS-3lp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +96,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerNewUser:" destination="ULI-Qi-zgh" eventType="touchUpInside" id="nsq-eI-1Tl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxk-EM-cvM">
                                 <rect key="frame" x="0.0" y="424" width="414" height="42"/>
@@ -104,7 +107,7 @@
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wsC-1R-fwF" kind="show" id="weZ-Hs-chr"/>
+                                    <segue destination="wsC-1R-fwF" kind="presentation" identifier="ShowLoginVC" modalPresentationStyle="fullScreen" id="weZ-Hs-chr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -126,6 +129,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="URP-D8-O17"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="3pS-oD-LTM" id="Bwb-0n-IY6"/>
+                        <outlet property="phonenumberTextField" destination="K2l-sm-TPy" id="aJu-GH-pyh"/>
+                        <outlet property="usernameTextField" destination="wdY-A1-7ru" id="M7e-S3-crr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lA-0I-a5L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,11 +144,11 @@
             <objects>
                 <viewController id="wsC-1R-fwF" userLabel="SignIn" customClass="SignInViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="trU-QG-jy8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edM-sE-crO" userLabel="UsernameView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="177"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="177"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="2f6-eq-4Wh">
                                         <rect key="frame" x="0.0" y="20" width="414" height="137"/>
@@ -164,7 +172,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhx-Tb-Sy2" userLabel="TestView">
-                                <rect key="frame" x="0.0" y="77" width="414" height="177"/>
+                                <rect key="frame" x="0.0" y="121" width="414" height="177"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="lWr-TD-3wR">
                                         <rect key="frame" x="0.0" y="20" width="414" height="137"/>
@@ -180,6 +188,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="login:" destination="wsC-1R-fwF" eventType="touchUpInside" id="v1b-JQ-Hev"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -198,6 +209,14 @@
                                     <constraint firstAttribute="trailing" secondItem="bHX-xP-1Oc" secondAttribute="trailing" id="zP9-Ob-hjv"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ago-Nx-Swh">
+                                <rect key="frame" x="0.0" y="427" width="414" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="No account? Tap Here to register.">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -211,6 +230,10 @@
                         <viewLayoutGuide key="safeArea" id="p1M-7x-pyJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="hZy-Kh-PE4"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="NAd-Rc-mx0" id="0YS-ri-Na2"/>
+                        <outlet property="usernameTextField" destination="rs5-s5-e9j" id="csO-jM-XwO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEb-jt-WIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

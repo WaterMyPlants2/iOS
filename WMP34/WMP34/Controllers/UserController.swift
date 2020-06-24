@@ -14,12 +14,11 @@ class UserController {
     
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
     
-    var token: LoginRepresentation?
+    static var token: LoginRepresentation?
     
     static let shared = UserController()
     
     // MARK: - API Functions
-    
     func registerUser(username: String, password: String, phonenumber: String,
                       completion: @escaping CompletionHandler = { _ in }) {
         let registerURL = URL(string: "/api/auth/register", relativeTo: baseURL)!
@@ -82,7 +81,7 @@ class UserController {
             }
             
             do {
-                self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
+                Self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
                 completion(.success(true))
             } catch {
                 NSLog("Error decoding login response: \(error)")
