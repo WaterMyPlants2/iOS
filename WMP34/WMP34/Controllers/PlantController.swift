@@ -29,7 +29,7 @@ class PlantController {
          */
     }
     
-    func sendPlantToServer(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
+    func sendPlantToServer(plant: PlantRepresentation, completion: @escaping CompletionHandler = { _ in }) {
         guard let token = userController.token?.access_token else {
             NSLog("Token object was found to be nil, aborting")
             return
@@ -43,11 +43,22 @@ class PlantController {
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         do {
-            //request.httpBody = try JSONEncoder().encode(plant)
+            request.httpBody = try JSONEncoder().encode(plant)
         } catch {
             NSLog("Error encoding plant \(plant): \(error)")
+            completion(.failure(.failedEncode))
+            return
         }
         
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                NSLog("Error sending plant to server \(plant): \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            
+            completion(.success(true))
+        }.resume()
     }
     
     func deletePlantFromServer(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
