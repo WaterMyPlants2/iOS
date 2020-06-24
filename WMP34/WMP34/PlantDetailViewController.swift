@@ -37,13 +37,15 @@ class PlantDetailViewController: UIViewController {
         !scientificName.isEmpty
             else { return }
         
-        if let plant = plant {
-            plant.nickname = plantName
-            plant.species = scientificName
-            let h20FrequencyDouble = determineFrequency()
-            plant.h20frequency = String(h20FrequencyDouble)
+       // if let plant = plant {
+//            plant.nickname = plantName
+//            plant.species = scientificName
+//            let h20FrequencyDouble = determineFrequency()
+//            plant.h2ofrequency = String(h20FrequencyDouble)
             
-            plantController?.deletePlantFromServer(plant: plant, completion: { (result) in
+            let plantRepresentation = PlantRepresentation(h2ofrequency: "", species: scientificName, image: "", nickname: plantName)
+            
+            plantController?.sendPlantToServer(plant: plantRepresentation, completion: { (result) in
                 switch result {
                 case .success(_):
                     print("Success")
@@ -51,7 +53,7 @@ class PlantDetailViewController: UIViewController {
                     print("Failure")
                 }
             })
-        }
+        //}
        
         do {
             try CoreDataStack.shared.mainContext.save()
@@ -105,7 +107,7 @@ class PlantDetailViewController: UIViewController {
     private func determineFrequencyText() -> String? {
         guard let plant = plant else { return nil }
         
-        guard let plantH20 = Int(plant.h20frequency!) else { return nil}
+        guard let plantH20 = Int(plant.h2ofrequency!) else { return nil}
 
         switch plantH20 {
         case 86400:
