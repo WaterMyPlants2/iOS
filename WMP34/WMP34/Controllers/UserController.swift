@@ -14,7 +14,7 @@ class UserController {
     
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
     
-    static var token: LoginRepresentation?
+    var token: LoginRepresentation?
     
     static let shared = UserController()
     
@@ -89,7 +89,7 @@ class UserController {
             }
             
             do {
-                Self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
+                self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
                 completion(.success(true))
             } catch {
                 NSLog("Error decoding login response: \(error)")
