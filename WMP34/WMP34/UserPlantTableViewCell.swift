@@ -32,7 +32,7 @@ class UserPlantTableViewCell: UITableViewCell {
     
     private func runTimer() {
         guard let plant = plant else { return }
-        let planth20 = Int(plant.h20frequency!)
+        let planth20 = Int(plant.h2ofrequency!)
         let plantH20Double = Double(planth20!)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + plantH20Double) {

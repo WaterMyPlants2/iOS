@@ -26,6 +26,14 @@ class PlantDetailViewController: UIViewController {
         super.viewDidLoad()
 
         picker.delegate = self
+        picker.dataSource = self
+        frequency.delegate = self
+        
+        picker.isHidden = true
+        plantName.text = plant?.nickname
+        scientificName.text = plant?.species
+        
+        frequency.text = determineFrequencyText()
         
     }
     
@@ -41,7 +49,7 @@ class PlantDetailViewController: UIViewController {
             plant.nickname = plantName
             plant.species = scientificName
             let h20FrequencyDouble = determineFrequency()
-            plant.h20frequency = String(h20FrequencyDouble)
+            plant.h2ofrequency = String(h20FrequencyDouble)
             
             plantController?.deletePlantFromServer(plant: plant, completion: { (result) in
                 switch result {
@@ -105,7 +113,7 @@ class PlantDetailViewController: UIViewController {
     private func determineFrequencyText() -> String? {
         guard let plant = plant else { return nil }
         
-        guard let plantH20 = Int(plant.h20frequency!) else { return nil}
+        guard let plantH20 = Int(plant.h2ofrequency!) else { return nil}
 
         switch plantH20 {
         case 86400:
