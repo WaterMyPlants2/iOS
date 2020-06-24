@@ -14,7 +14,7 @@ class RegisterNewUserViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var phonenumberTextField: UITextField!
     
-    let userController = UserController()
+    let userController = UserController.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

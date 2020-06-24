@@ -8,9 +8,9 @@
 
 import UIKit
 
-//protocol PlantCellDelegate {
-//    func timerDidFire(plant: Plant) -> Void
-//}
+protocol PlantCellDelegate {
+    func timerDidFire(plant: Plant) -> Void
+}
 
 class UserPlantTableViewCell: UITableViewCell {
 
@@ -20,7 +20,7 @@ class UserPlantTableViewCell: UITableViewCell {
 
     var plant: Plant?
     
-    //var delegate: PlantCellDelegate?
+    var delegate: PlantCellDelegate?
 
     var plantIsWatered: Bool = false
     
@@ -30,15 +30,16 @@ class UserPlantTableViewCell: UITableViewCell {
         
     }
     
-//    private func runTimer() {
-//        guard let plant = plant else { return }
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + plant.h2oFrequency) {
-//            plant.isWatered = false
-//            self.updateViews()
-//            self.delegate?.timerDidFire(plant: plant)
-//        }
-//    }
+    private func runTimer() {
+        guard let plant = plant else { return }
+        let planth20 = Int(plant.h2ofrequency!)
+        let plantH20Double = Double(planth20!)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + plantH20Double) {
+            self.updateViews()
+            self.delegate?.timerDidFire(plant: plant)
+        }
+    }
     
     private func updateViews() {
         guard let plant = plant else { return }

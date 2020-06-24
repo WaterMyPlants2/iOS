@@ -176,6 +176,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePlantTapped:" destination="kbM-9i-S1H" eventType="touchUpInside" id="GVa-i0-NRj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFr-ou-kfH">
                                 <rect key="frame" x="0.0" y="798" width="414" height="44"/>
@@ -183,7 +186,14 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="kbM-9i-S1H" eventType="touchUpInside" id="NjL-Ud-lpO"/>
+                                </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Krz-Ec-IZ6">
+                                <rect key="frame" x="0.0" y="680" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -202,6 +212,12 @@
                     <navigationItem key="navigationItem" title="Add a new plant" id="0BT-T8-fbu">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="x8H-lz-Hxl"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="frequency" destination="15h-bB-7EG" id="DtC-GH-xIC"/>
+                        <outlet property="picker" destination="Krz-Ec-IZ6" id="Kak-QK-mu6"/>
+                        <outlet property="plantName" destination="KPZ-3p-ZRK" id="0S1-CP-VkY"/>
+                        <outlet property="scientificName" destination="cD6-O8-U3X" id="opJ-iN-SXu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQW-wc-yFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

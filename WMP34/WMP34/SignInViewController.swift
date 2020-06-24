@@ -13,7 +13,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
-    let userController = UserController()
+    let userController = UserController.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
