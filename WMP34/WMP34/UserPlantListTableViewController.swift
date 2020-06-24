@@ -37,6 +37,9 @@ class UserPlantListTableViewController: UITableViewController {
         
         tableView.reloadData()
         
+        if !necessaryPresentLoginViewController {
+            presentRegisterView()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,9 +48,7 @@ class UserPlantListTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if !necessaryPresentLoginViewController {
-            presentRegisterView()
-        }
+
     }
     
     // MARK: - Table view data source
