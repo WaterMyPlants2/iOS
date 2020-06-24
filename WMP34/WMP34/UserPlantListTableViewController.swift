@@ -13,17 +13,17 @@ class UserPlantListTableViewController: UITableViewController {
     
     var necessaryPresentLoginViewController: Bool {
         //TODO: Update to present login VC
-        //UserController.bearer == nil
-        return true
+        UserController.token == nil
         
     }
+    
     
     let userController = UserController()
     let plantController = PlantController()
     
     lazy var fetchedResultsController: NSFetchedResultsController<Plant> = {
         let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "commonName", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "nickname", ascending: true)]
         let context = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
@@ -33,12 +33,13 @@ class UserPlantListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if necessaryPresentLoginViewController {
+            presentRegisterView()
+        }
     }
 
     // MARK: - Table view data source
@@ -87,22 +88,20 @@ class UserPlantListTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "" {
+        if segue.identifier == "AddNewPlant" {
             guard let createPlantVC = segue.destination as? PlantDetailViewController else { return }
-            
+
             createPlantVC.plantController = plantController
-            
-            
-        } else if segue.identifier == "" {
+
+
+        } else if segue.identifier == "PlantDetail" {
             guard let detailVC = segue.destination as? PlantDetailViewController,
             let indexPath = tableView.indexPathForSelectedRow else { return }
-            
+
             detailVC.plant = fetchedResultsController.object(at: indexPath)
             detailVC.plantController = plantController
-            
+
         }
-        
-        
     }
     
 
@@ -129,10 +128,12 @@ class UserPlantListTableViewController: UITableViewController {
     }
     */
 
-    
-    
-    
-
+    private func presentRegisterView() {
+        let loginAndRegisterStoryBoard = UIStoryboard(name: "Login-Register", bundle: Bundle(identifier: "CasanovaStudios.WMP34"))
+        let registerViewController = loginAndRegisterStoryBoard.instantiateViewController(withIdentifier: "Register")
+        registerViewController.modalPresentationStyle = .fullScreen
+        present(registerViewController, animated: true)
+    }
 }
 
 
@@ -140,11 +141,11 @@ extension UserPlantListTableViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
-    
+
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
-    
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange sectionInfo: NSFetchedResultsSectionInfo,
                     atSectionIndex sectionIndex: Int,
@@ -158,7 +159,7 @@ extension UserPlantListTableViewController: NSFetchedResultsControllerDelegate {
             break
         }
     }
-    
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange anObject: Any,
                     at indexPath: IndexPath?,
