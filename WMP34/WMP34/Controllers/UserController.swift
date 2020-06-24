@@ -19,7 +19,6 @@ class UserController {
     static let shared = UserController()
     
     // MARK: - API Functions
-    
     func registerUser(username: String, password: String, phonenumber: String,
                       completion: @escaping CompletionHandler = { _ in }) {
         let registerURL = URL(string: "/api/auth/register", relativeTo: baseURL)!
