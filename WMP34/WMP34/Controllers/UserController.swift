@@ -10,11 +10,11 @@ import Foundation
 import CoreData
 
 class UserController {
-    let baseURL = URL(string: "https://jren-watermyplants.herokuapp.com/")!
+    let baseURL = URL(string: "https://jren-watermyplants.herokuapp.com")!
     
     typealias CompletionHandler = (Result<Bool, NetworkError>) -> Void
     
-    var token: LoginRepresentation?
+    static var token: LoginRepresentation?
     
     static let shared = UserController()
     
@@ -56,16 +56,24 @@ class UserController {
         
         var request = URLRequest(url: loginURL)
         request.httpMethod = "POST"
-        request.addValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
-        do {
-            let login = ["grant_type" : "password", "username" : username, "password" : password]
-            request.httpBody = try JSONEncoder().encode(login)
-        } catch {
-            NSLog("Error encoding user \(error)")
-            completion(.failure(.failedEncode))
-            return
-        }
+        let authentication = "lambda-client:lambda-secret"
+        let encodedAuth = authentication.data(using: String.Encoding.utf8)!
+        let base64Auth = encodedAuth.base64EncodedString()
+        
+        request.addValue("Basic \(base64Auth)", forHTTPHeaderField: "Authorization")
+
+//            let login = ["grant_type" : "password", "username" : username, "password" : password]
+//            request.httpBody = try JSONEncoder().encode(login)
+//            print(String(data: request.httpBody!, encoding: String.Encoding.utf8))
+//            let jsonData = try JSONSerialization.data(withJSONObject: login, options: .prettyPrinted)
+//            request.httpBody = jsonData
+            
+        let loginString = "grant_type=password&username=\(username)&password=\(password)"
+        let loginStringData = loginString.data(using: String.Encoding.utf8)
+            
+        request.httpBody = loginStringData
         
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
@@ -81,7 +89,7 @@ class UserController {
             }
             
             do {
-                self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
+                Self.token = try JSONDecoder().decode(LoginRepresentation.self, from: data)
                 completion(.success(true))
             } catch {
                 NSLog("Error decoding login response: \(error)")

@@ -10,7 +10,7 @@
         <!--My Plants-->
         <scene sceneID="NF3-c2-jhB">
             <objects>
-                <tableViewController id="bIp-Lx-Qlb" sceneMemberID="viewController">
+                <tableViewController id="bIp-Lx-Qlb" customClass="UserPlantListTableViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NLx-94-8q0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kbM-9i-S1H" kind="show" id="uTQ-Uf-S1n"/>
+                                    <segue destination="kbM-9i-S1H" kind="show" identifier="PlantDetail" id="uTQ-Uf-S1n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -67,14 +67,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Plants" id="hrx-P5-WFx">
+                        <barButtonItem key="leftBarButtonItem" title="REGISTER TEST" id="LtS-gO-DSk">
+                            <connections>
+                                <segue destination="8D8-NL-kZB" kind="show" id="THI-p5-Arg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kew-gn-eze">
                             <connections>
-                                <segue destination="kbM-9i-S1H" kind="show" id="KRi-aL-pH5"/>
+                                <segue destination="kbM-9i-S1H" kind="show" identifier="AddNewPlant" id="KRi-aL-pH5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="8D8-NL-kZB" kind="show" id="Ama-r7-BaO"/>
+                        <segue destination="8D8-NL-kZB" kind="show" identifier="RegisterViewSegue" id="Ama-r7-BaO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxf-Mr-Vyv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -112,7 +117,7 @@
         <!--Add a new plant-->
         <scene sceneID="IS5-p1-SuO">
             <objects>
-                <viewController id="kbM-9i-S1H" sceneMemberID="viewController">
+                <viewController id="kbM-9i-S1H" customClass="PlantDetailViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMG-cm-IeC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,6 +210,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="uTQ-Uf-S1n"/>
+        <segue reference="THI-p5-Arg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0000" width="266.5" height="266.5"/>

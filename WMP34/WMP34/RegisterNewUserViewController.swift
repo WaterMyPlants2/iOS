@@ -19,6 +19,10 @@ class RegisterNewUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameTextField.autocapitalizationType = .none
+        usernameTextField.autocorrectionType = .no
+        passwordTextField.autocapitalizationType = .none
+        passwordTextField.autocorrectionType = .no
         //usernameTextField.becomeFirstResponder()
     }
     
