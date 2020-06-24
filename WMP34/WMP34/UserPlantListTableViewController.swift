@@ -13,8 +13,9 @@ class UserPlantListTableViewController: UITableViewController {
     
     var necessaryPresentLoginViewController: Bool {
         //TODO: Update to present login VC
-        UserController.token == nil
+        guard let _ = userController.token else { return false }
         
+        return true
     }
     
     

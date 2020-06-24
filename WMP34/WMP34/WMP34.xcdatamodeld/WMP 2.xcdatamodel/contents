@@ -3,10 +3,11 @@
     <entity name="Plant" representedClassName="Plant" syncable="YES" codeGenerationType="class">
         <attribute name="h2ofrequency" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="isWatered" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String"/>
         <attribute name="species" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Plant" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="Plant" positionX="-54" positionY="-9" width="128" height="118"/>
     </elements>
 </model>
