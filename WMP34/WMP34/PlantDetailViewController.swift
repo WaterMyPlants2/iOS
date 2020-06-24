@@ -40,10 +40,32 @@ class PlantDetailViewController: UIViewController {
         if let plant = plant {
             plant.nickname = plantName
             plant.species = scientificName
+            let h20FrequencyDouble = determineFrequency()
+            plant.h20frequency = String(h20FrequencyDouble)
             
-            
+            plantController?.deletePlantFromServer(plant: plant, completion: { (result) in
+                switch result {
+                case .success(_):
+                    print("Success")
+                case .failure(_):
+                    print("Failure")
+                }
+            })
         }
+       
+        do {
+            try CoreDataStack.shared.mainContext.save()
+        } catch {
+            NSLog("Error saving managed object context: \(error)")
+        }
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        
     }
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     enum PickerOptions: String, CaseIterable {
         case onceADay = "Once a day"
@@ -80,25 +102,26 @@ class PlantDetailViewController: UIViewController {
         }
     }
     
-//    private func determineFrequencyText() -> String? {
-//        guard let plant = plant else { return nil }
-//
-//        switch plant.h20frequency {
-//        case 86400:
-//            return PickerOptions.onceADay.rawValue
-//        case 172800:
-//            return PickerOptions.everyTwoDays.rawValue
-//        case 259200:
-//            return PickerOptions.everyThreeDays.rawValue
-//        case 604800:
-//            return PickerOptions.onceAWeek.rawValue
-//        case 5:
-//            return PickerOptions.demo.rawValue
-//        default:
-//            return nil
-//        }
-//    }
+    private func determineFrequencyText() -> String? {
+        guard let plant = plant else { return nil }
+        
+        guard let plantH20 = Int(plant.h20frequency!) else { return nil}
 
+        switch plantH20 {
+        case 86400:
+            return PickerOptions.onceADay.rawValue
+        case 172800:
+            return PickerOptions.everyTwoDays.rawValue
+        case 259200:
+            return PickerOptions.everyThreeDays.rawValue
+        case 604800:
+            return PickerOptions.onceAWeek.rawValue
+        case 5:
+            return PickerOptions.demo.rawValue
+        default:
+            return nil
+        }
+    }
 }
 
 extension PlantDetailViewController: UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
