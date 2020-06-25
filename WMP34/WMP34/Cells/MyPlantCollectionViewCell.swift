@@ -5,7 +5,6 @@
 //  Created by Bradley Diroff on 6/22/20.
 //  Copyright © 2020 Casanova Studios. All rights reserved.
 //
-
 import UIKit
 
 class MyPlantCollectionViewCell: UICollectionViewCell {
@@ -69,9 +68,17 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          allStack.distribution = UIStackView.Distribution.fillEqually
          allStack.alignment = UIStackView.Alignment.center
          allStack.spacing = 5.0
-         allStack.addArrangedSubview(titleLabel)
+    //     allStack.addArrangedSubview(titleLabel)
          allStack.addArrangedSubview(levelText)
          allStack.addArrangedSubview(wetStack)
+        
+        let vertStack = UIStackView()
+        vertStack.axis = NSLayoutConstraint.Axis.vertical
+        vertStack.distribution = UIStackView.Distribution.fillEqually
+        vertStack.alignment = UIStackView.Alignment.center
+        vertStack.spacing = 5.0
+        vertStack.addArrangedSubview(titleLabel)
+        vertStack.addArrangedSubview(allStack)
          
          let doubleStack = UIStackView()
          doubleStack.axis  = NSLayoutConstraint.Axis.vertical
@@ -83,7 +90,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          imgView.heightAnchor.constraint(equalToConstant: 250).isActive = true
          
          doubleStack.addArrangedSubview(imgView)
-         doubleStack.addArrangedSubview(allStack)
+         doubleStack.addArrangedSubview(vertStack) //allStack)
          doubleStack.translatesAutoresizingMaskIntoConstraints = false
          
          addSubview(doubleStack)
@@ -93,6 +100,16 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          doubleStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
          doubleStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
          doubleStack.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        addSubview(waterButton)
+        
+        let buttonSize = (bounds.maxX * 2) / 3
+        
+        waterButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
+        waterButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
+        waterButton.centerXAnchor.constraint(equalTo: imgView.centerXAnchor).isActive = true
+        waterButton.centerYAnchor.constraint(equalTo: imgView.centerYAnchor).isActive = true
+        
      }
      
      let backImg : UIView = {
@@ -108,7 +125,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          let imageView = UIImageView()
          imageView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
          imageView.translatesAutoresizingMaskIntoConstraints = false
-         imageView.image = UIImage(named: "continueWithFacebook")
+         imageView.image = UIImage(named: "potplant")
          imageView.contentMode = .scaleAspectFit //.center
          imageView.clipsToBounds = true
          imageView.layer.cornerRadius = 8.0
@@ -139,7 +156,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          let label = UILabel(frame: ccgRect)
          label.textColor = UIColor.black
          
-         guard let customFont = UIFont(name: "Thonburi-Bold", size: 14/*UIFont.labelFontSize*/) else {
+         guard let customFont = UIFont(name: "AppleSDGothicNeo-Bold", size: 25/*UIFont.labelFontSize*/) else {
              fatalError("No font"
              )
          }
@@ -152,6 +169,17 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          label.numberOfLines = 2
          return label
      }()
+    
+    var waterButton: UIButton = {
+        let cgrec = CGRect(x: 0, y: 0, width: 100, height: 100)
+        
+        let button = UIButton(frame: cgrec)
+        button.setImage(UIImage(named: "waterElement"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
      
      var levelText : UILabel = {
          let ccgRect = CGRect(x:100, y: 20, width: 40 , height: 20)
@@ -165,7 +193,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          label.textAlignment = .center
          label.lineBreakMode = .byWordWrapping
          label.numberOfLines = 1
-         label.text = "Wetness Level"
+         label.text = "Water Level"
          return label
      }()
      

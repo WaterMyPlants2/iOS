@@ -5,7 +5,6 @@
 //  Created by Bradley Diroff on 6/22/20.
 //  Copyright © 2020 Casanova Studios. All rights reserved.
 //
-
 import UIKit
 
 class TestingViewController: UIViewController {
@@ -14,16 +13,44 @@ class TestingViewController: UIViewController {
     
     let dangerCell = UICollectionViewCell()
     
+    var logoutBarButtonItem: UIBarButtonItem?
+    var addBarButtonItem: UIBarButtonItem?
+    
+    var plants = ["fern one", "fern two", "fern three", "fern four", "fern five", "fern six"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.systemGreen
         
         bringInCollectionView()
+        bringInNavigationItems()
         
         dangerCell.backgroundColor = UIColor.red
         
         // Do any additional setup after loading the view.
+    }
+    
+    func bringInNavigationItems() {
+        
+     //   self.navigationController?.delegate = self
+        
+        logoutBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logoutUser))
+        logoutBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.leftBarButtonItem  = logoutBarButtonItem!
+        
+        addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPlant))
+        addBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.rightBarButtonItem  = addBarButtonItem!
+        
+    }
+    
+    @objc func addPlant() {
+        performSegue(withIdentifier: "AddSegue", sender: nil)
+    }
+    
+    @objc func logoutUser() {
+        
     }
     
     func bringInCollectionView() {
@@ -44,8 +71,10 @@ class TestingViewController: UIViewController {
         let cellWidth = view.frame.width - 30
         layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
         
-   //     let sized = CGRect(x: 0.0, y: 77, width: Double(self.view.frame.maxX), height: Double(self.view.frame.height - 126))
+   //     let sized = CGRect(x: 0.0, y: 0, width: Double(self.view.frame.maxX), height: Double(self.view.frame.height))
+        
         let sized = CGRect(x: 0.0, y: 0, width: Double(self.view.frame.maxX), height: Double(self.view.frame.height))
+        
         collectionView = UICollectionView(frame: sized, collectionViewLayout: layout)
         collectionView?.register(MyPlantCollectionViewCell.self, forCellWithReuseIdentifier: "MyPlantCell")
         collectionView?.backgroundColor = UIColor.clear
@@ -59,21 +88,42 @@ class TestingViewController: UIViewController {
 extension TestingViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("ok it's checking for cell data")
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPlantCell", for: indexPath) as? MyPlantCollectionViewCell else { return dangerCell}
         
-        cell.titleLabel.text = "TESTING PLANT NAME"
-        cell.imgView.image = UIImage(named: "vector-graphics-stock-photography-illustration-image-garden-png-favpng-WUcprivFQFnW9UrwBh2vaxf0r")
+        let plant = plants[indexPath.item]
+        
+        cell.titleLabel.text = plant
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return plants.count
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1  // Number of section
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let plant = plants[indexPath.item]
+        
+        performSegue(withIdentifier: "EditSegue", sender: plant)
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= -104 {
+            print("its not 0: \(scrollView.contentOffset.y)")
+            logoutBarButtonItem?.tintColor = UIColor.systemGreen
+            addBarButtonItem?.tintColor = UIColor.systemGreen
+        } else {
+            print("its 0")
+            logoutBarButtonItem?.tintColor = UIColor.white
+            addBarButtonItem?.tintColor = UIColor.white
+        }
+
     }
     
 }
