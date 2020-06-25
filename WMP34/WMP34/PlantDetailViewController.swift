@@ -10,81 +10,15 @@ import UIKit
 
 class PlantDetailViewController: UIViewController {
     
-    
     var plantController: PlantController?
     var plant: Plant?
     var wasEdited = false
     
-    @IBOutlet weak var plantName: UITextField!
-    @IBOutlet weak var scientificName: UITextField!
-    @IBOutlet weak var frequency: UITextField!
-    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var plantNameTextField: UITextField!
+    @IBOutlet weak var speciesTextField: UITextField!
+    @IBOutlet weak var frequencyTextField: UITextField!
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        picker.delegate = self
-        navigationItem.rightBarButtonItem = editButtonItem
-        updateViews()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if wasEdited {
-            guard let plantName = plantName.text,
-            !plantName.isEmpty,
-                let plant = plant else { return }
-            
-            let h20Frequency = frequency.text
-            let scientficName = scientificName.text
-            plant.nickname = plantName
-            plant.h2ofrequency = h20Frequency
-            plant.species = scientficName
-            
-            plantController?.sendPlantToServer(plant: plant)
-            do {
-                try CoreDataStack.shared.save()
-            } catch {
-                NSLog("Error saving managed object context (during task edit): \(error)")
-                
-            }
-        }
-        
-    }
-    
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        
-        if editing { wasEdited = true }
-        
-        plantName.isUserInteractionEnabled = editing
-        frequency.isUserInteractionEnabled = editing
-        scientificName.isUserInteractionEnabled = editing
-        
-        navigationItem.hidesBackButton = editing
-    }
-    
-    func updateViews() {
-        scientificName.text = plant?.species
-        scientificName.isUserInteractionEnabled = isEditing
-        
-        frequency.text = plant?.h2ofrequency
-        frequency.isUserInteractionEnabled = isEditing
-        
-        plantName.text = plant?.nickname
-        plantName.isUserInteractionEnabled = isEditing
-        
-    }
-    
-    
-    
-    
-    
-    
-    
+    @IBOutlet weak var pickerView: UIPickerView!
     
     
     enum PickerOptions: String, CaseIterable {
@@ -103,40 +37,95 @@ class PlantDetailViewController: UIViewController {
         return pickerData
     }
     
-    private func determineFrequency() -> Double {
-        guard let frequency = frequency.text else { return 0 }
+    // MARK: - View Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        frequencyTextField.delegate = self
+        
+        pickerView.isHidden = true
+        plantNameTextField.text = plant?.nickname
+        speciesTextField.text = plant?.species
+        frequencyTextField.text = determineFrequencyText()
+        
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func savePlantButton(_ sender: Any) {
+        
+        guard let commonName = plantNameTextField.text,
+            let scientificName = speciesTextField.text else { return }
+        
+        if let plant = plant {
+            plant.nickname = commonName
+            plant.species = scientificName
+            plant.h2ofrequency = determineFrequency()
+            
+            plantController?.sendPlantToServer(plant: plant, completion: { result in
+                switch result {
+                case .success(_):
+                    print("Success")
+                case .failure(_):
+                    print("Failure")
+                }
+            })
+        } else {
+            let plant = Plant(nickname: commonName, species: scientificName, image: "", h2ofrequency: determineFrequency())
+            
+            plantController?.sendPlantToServer(plant: plant, completion: { result in
+                switch result {
+                case .success(_):
+                    print("Success")
+                case .failure(_):
+                    print("Failure")
+                }
+            })
+        }
+        
+        do {
+            try CoreDataStack.shared.mainContext.save()
+        } catch {
+            NSLog("Error saving managed object context: \(error)")
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func determineFrequency() -> String {
+        guard let frequency = frequencyTextField.text else { return "0" }
         
         switch frequency {
         case PickerOptions.onceADay.rawValue:
-            return 86400
+            return "86400"
         case PickerOptions.everyTwoDays.rawValue:
-            return 172800
+            return "172800"
         case PickerOptions.everyThreeDays.rawValue:
-            return 259200
+            return "259200"
         case PickerOptions.onceAWeek.rawValue:
-            return 604800
+            return "604800"
         case PickerOptions.demo.rawValue:
-            return 5
+            return "5"
         default:
-            return 0
+            return "0"
         }
     }
     
     private func determineFrequencyText() -> String? {
         guard let plant = plant else { return nil }
         
-        guard let plantH20 = Int(plant.h2ofrequency!) else { return nil}
-        
-        switch plantH20 {
-        case 86400:
+        switch plant.h2ofrequency {
+        case "86400":
             return PickerOptions.onceADay.rawValue
-        case 172800:
+        case "172800":
             return PickerOptions.everyTwoDays.rawValue
-        case 259200:
+        case "259200":
             return PickerOptions.everyThreeDays.rawValue
-        case 604800:
+        case "604800":
             return PickerOptions.onceAWeek.rawValue
-        case 5:
+        case "5":
             return PickerOptions.demo.rawValue
         default:
             return nil
@@ -158,12 +147,13 @@ extension PlantDetailViewController: UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        frequency.text = pickerData[row]
+        frequencyTextField.text = pickerData[row]
         pickerView.isHidden = true
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        frequency.isHidden = false
+        pickerView.isHidden = false
         return false
     }
 }
+
