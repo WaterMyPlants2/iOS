@@ -209,10 +209,9 @@
                                     <constraint firstAttribute="trailing" secondItem="bHX-xP-1Oc" secondAttribute="trailing" id="zP9-Ob-hjv"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ago-Nx-Swh">
-                                <rect key="frame" x="0.0" y="427" width="414" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ago-Nx-Swh">
+                                <rect key="frame" x="0.0" y="427" width="414" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="No account? Tap Here to register.">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -223,7 +222,10 @@
                             <constraint firstItem="edM-sE-crO" firstAttribute="top" secondItem="p1M-7x-pyJ" secondAttribute="top" id="0ta-ed-sEl"/>
                             <constraint firstItem="Fhx-Tb-Sy2" firstAttribute="top" secondItem="edM-sE-crO" secondAttribute="bottom" constant="-100" id="1Z8-Pf-zei"/>
                             <constraint firstItem="Fhx-Tb-Sy2" firstAttribute="leading" secondItem="p1M-7x-pyJ" secondAttribute="leading" id="5Mf-Ia-8wG"/>
+                            <constraint firstItem="Ago-Nx-Swh" firstAttribute="leading" secondItem="p1M-7x-pyJ" secondAttribute="leading" id="7yz-qe-LAv"/>
+                            <constraint firstItem="Ago-Nx-Swh" firstAttribute="trailing" secondItem="p1M-7x-pyJ" secondAttribute="trailing" id="A8M-FM-VH8"/>
                             <constraint firstItem="edM-sE-crO" firstAttribute="leading" secondItem="p1M-7x-pyJ" secondAttribute="leading" id="BxC-F5-ApX"/>
+                            <constraint firstItem="Ago-Nx-Swh" firstAttribute="top" secondItem="bHX-xP-1Oc" secondAttribute="bottom" constant="129" id="DLi-1O-kkj"/>
                             <constraint firstItem="p1M-7x-pyJ" firstAttribute="trailing" secondItem="Fhx-Tb-Sy2" secondAttribute="trailing" id="LW3-jq-2iw"/>
                             <constraint firstItem="p1M-7x-pyJ" firstAttribute="trailing" secondItem="edM-sE-crO" secondAttribute="trailing" id="aPL-CF-slx"/>
                         </constraints>

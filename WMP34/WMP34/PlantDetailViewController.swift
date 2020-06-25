@@ -51,6 +51,17 @@ class PlantDetailViewController: UIViewController {
         speciesTextField.text = plant?.species
         frequencyTextField.text = determineFrequencyText()
         
+        title = plant?.nickname ?? "Add a new plant"
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //This is just to make it easier for user to input text.
+        guard let plantNameTxtField = plantNameTextField.text else { return }
+        if plantNameTxtField.isEmpty {
+            plantNameTextField.becomeFirstResponder()
+        }
+        
     }
     
     // MARK: - Actions

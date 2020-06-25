@@ -22,7 +22,7 @@ class SignInViewController: UIViewController {
         usernameTextField.autocorrectionType = .no
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
-        //usernameTextField.becomeFirstResponder()
+        usernameTextField.becomeFirstResponder()
     }
     
     @IBAction func login(_ sender: UIButton) {
@@ -52,16 +52,6 @@ class SignInViewController: UIViewController {
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: - Helper methods
        private func showAlert(title: String, message: String) {
