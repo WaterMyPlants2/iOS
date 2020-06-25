@@ -18,7 +18,6 @@ class UserPlantListTableViewController: UITableViewController {
         return true
     }
     
-    
     let userController = UserController()
     let plantController = PlantController()
     
