@@ -19,6 +19,9 @@ class PlantDetailViewController: UIViewController {
     @IBOutlet weak var frequencyTextField: UITextField!
     
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     
     
     enum PickerOptions: String, CaseIterable {
@@ -52,6 +55,8 @@ class PlantDetailViewController: UIViewController {
         frequencyTextField.text = determineFrequencyText()
         
         title = plant?.nickname ?? "Add a new plant"
+        
+        setUpButtonUI()
         
     }
     
@@ -105,6 +110,11 @@ class PlantDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func cancelButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     private func determineFrequency() -> String {
         guard let frequency = frequencyTextField.text else { return "0" }
         
@@ -141,6 +151,23 @@ class PlantDetailViewController: UIViewController {
         default:
             return nil
         }
+    }
+    
+    func setUpButtonUI() {
+        saveButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        saveButton.layer.shadowColor = UIColor.gray.cgColor
+        saveButton.layer.shadowOpacity = 1
+        saveButton.layer.shadowRadius = 5
+        saveButton.layer.masksToBounds = false
+        saveButton.layer.cornerRadius = 12
+
+        cancelButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        cancelButton.layer.shadowColor = UIColor.gray.cgColor
+        cancelButton.layer.shadowOpacity = 1
+        cancelButton.layer.shadowRadius = 5
+        cancelButton.layer.masksToBounds = false
+        cancelButton.layer.cornerRadius = 12
+
     }
 }
 
