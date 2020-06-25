@@ -10,6 +10,124 @@ import UIKit
 
 class AddPlantViewController: UIViewController {
     
+    var plantController: PlantController?
+    var plant: Plant?
+    var wasEdited = false
+    
+    enum PickerOptions: String, CaseIterable {
+        case onceADay = "Once a day"
+        case everyTwoDays = "Every two days"
+        case everyThreeDays = "Every three days"
+        case onceAWeek = "Once a week"
+        case demo = "Demo Purposes: 5 seconds"
+    }
+    
+    private var pickerData: [String] {
+        var pickerData = [String]()
+        for data in PickerOptions.allCases {
+            pickerData.append(data.rawValue)
+        }
+        return pickerData
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        makeBackground()
+        setupObjects()
+        
+        picker.delegate = self
+        picker.dataSource = self
+        frequency.delegate = self
+        
+        picker.isHidden = true
+        nickName.text = plant?.nickname
+        speciesName.text = plant?.species
+        frequency.text = determineFrequencyText()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+    }
+    
+    @objc func savePlantButton() {
+        guard let commonName = nickName.text,
+            let scientificName = speciesName.text else { return }
+        
+        if let plant = plant {
+            plant.nickname = commonName
+            plant.species = scientificName
+            plant.h2ofrequency = determineFrequency()
+            
+            plantController?.sendPlantToServer(plant: plant, completion: { result in
+                switch result {
+                case .success(_):
+                    print("Success")
+                case .failure(_):
+                    print("Failure")
+                }
+            })
+        } else {
+            let plant = Plant(nickname: commonName, species: scientificName, image: "", h2ofrequency: determineFrequency())
+            
+            plantController?.sendPlantToServer(plant: plant, completion: { result in
+                switch result {
+                case .success(_):
+                    print("Success")
+                case .failure(_):
+                    print("Failure")
+                }
+            })
+        }
+        
+        do {
+            try CoreDataStack.shared.mainContext.save()
+        } catch {
+            NSLog("Error saving managed object context: \(error)")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func determineFrequency() -> String {
+        guard let frequency = frequency.text else { return "0" }
+        
+        switch frequency {
+        case PickerOptions.onceADay.rawValue:
+            return "86400"
+        case PickerOptions.everyTwoDays.rawValue:
+            return "172800"
+        case PickerOptions.everyThreeDays.rawValue:
+            return "259200"
+        case PickerOptions.onceAWeek.rawValue:
+            return "604800"
+        case PickerOptions.demo.rawValue:
+            return "5"
+        default:
+            return "0"
+        }
+    }
+    
+    private func determineFrequencyText() -> String? {
+        guard let plant = plant else { return nil }
+        
+        switch plant.h2ofrequency {
+        case "86400":
+            return PickerOptions.onceADay.rawValue
+        case "172800":
+            return PickerOptions.everyTwoDays.rawValue
+        case "259200":
+            return PickerOptions.everyThreeDays.rawValue
+        case "604800":
+            return PickerOptions.onceAWeek.rawValue
+        case "5":
+            return PickerOptions.demo.rawValue
+        default:
+            return nil
+        }
+    }
+    
     var formView: UIView = {
         
         let aView = UIView()
@@ -38,6 +156,7 @@ class AddPlantViewController: UIViewController {
         textField.borderStyle = .roundedRect
     //    textField.translatesAutoresizingMaskIntoConstraints  = false
         textField.placeholder = "Nickname"
+        textField.autocorrectionType = .no
         return textField
     }()
     
@@ -46,6 +165,7 @@ class AddPlantViewController: UIViewController {
         textField.borderStyle = .roundedRect
    //     textField.translatesAutoresizingMaskIntoConstraints  = false
         textField.placeholder = "Species Name"
+        textField.autocorrectionType = .no
         return textField
     }()
     
@@ -54,6 +174,7 @@ class AddPlantViewController: UIViewController {
         textField.borderStyle = .roundedRect
   //      textField.translatesAutoresizingMaskIntoConstraints  = false
         textField.placeholder = "Frequency"
+        textField.autocorrectionType = .no
         return textField
     }()
     
@@ -118,6 +239,18 @@ class AddPlantViewController: UIViewController {
         return label
     }()
     
+    var saveButton: UIButton = {
+        let cgrec = CGRect(x: 0, y: 0, width: 50, height: 50)
+        
+        let button = UIButton(frame: cgrec)
+        button.setImage(UIImage(named: "waterElement"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+  //      button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(savePlantButton), for: .touchUpInside)
+        
+        return button
+    }()
+    
     var picker: UIPickerView = {
         let ccgRect = CGRect(x:0, y: 0, width: 250 , height: 80)
         let thePicker = UIPickerView()
@@ -125,19 +258,6 @@ class AddPlantViewController: UIViewController {
  //       thePicker.translatesAutoresizingMaskIntoConstraints = false
         return thePicker
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        makeBackground()
-        setupObjects()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-
-    }
     
     func setupObjects() {
         
@@ -172,6 +292,10 @@ class AddPlantViewController: UIViewController {
         self.view.addSubview(picker)
         picker.center.x = self.view.frame.midX
         picker.center.y = self.view.frame.midY
+        
+        self.view.addSubview(saveButton)
+        saveButton.center.x = self.view.frame.midX + 100
+        saveButton.center.y = self.view.frame.midY - 250
         
         /*
         formView.heightAnchor.constraint(equalToConstant: 200).isActive = true
@@ -211,5 +335,30 @@ class AddPlantViewController: UIViewController {
         
     }
 
+}
+
+
+extension AddPlantViewController: UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        frequency.text = pickerData[row]
+        picker.isHidden = true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        picker.isHidden = false
+        return false
+    }
 }
 

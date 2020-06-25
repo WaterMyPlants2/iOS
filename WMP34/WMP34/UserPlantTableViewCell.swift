@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol PlantCellDelegate {
-    func timerDidFire(plant: Plant) -> Void
-}
-
 class UserPlantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var plantName: UILabel!

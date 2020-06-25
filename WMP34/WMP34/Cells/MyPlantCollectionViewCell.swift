@@ -7,6 +7,10 @@
 //
 import UIKit
 
+protocol PlantCellDelegate {
+    func timerDidFire(plant: Plant) -> Void
+}
+
 class MyPlantCollectionViewCell: UICollectionViewCell {
     var wetOne : UIImageView = {
          let imageView = UIImageView()
@@ -177,6 +181,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
         button.setImage(UIImage(named: "waterElement"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(waterPlantButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -200,4 +205,63 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
      required init?(coder aDecoder: NSCoder) {
          fatalError("init(coder:) has not been implemented")
      }
+    
+    var plant: Plant? {
+        didSet{
+            updateViews()
+        }
+    }
+    
+    var delegate: PlantCellDelegate?
+
+    var plantIsWatered: Bool = false
+    
+    @objc func waterPlantButtonTapped() {
+        print("OK THE BUTTON WAS TAPPED")
+        guard let plant = plant else { return }
+        plant.isWatered.toggle()
+        
+        updateViews()
+        
+        runTimer()
+        
+    }
+    
+    private func runTimer() {
+        
+        guard let plant = plant else {return}
+        let planth20 = Int(plant.h2ofrequency!)
+        let plantH20Double = Double(planth20!)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + plantH20Double) {
+            plant.isWatered = false
+            self.updateViews()
+            self.delegate?.timerDidFire(plant: plant)
+        }
+    }
+    
+    private func updateViews() {
+        guard let plant = plant else { return }
+        
+        titleLabel.text = plant.nickname
+    //    plantSpecies.text = plant.species
+        
+
+        
+        if plant.isWatered == false {
+            waterButton.isEnabled = true
+            DispatchQueue.main.async {
+                self.waterButton.isHidden = false
+            }
+            
+        } else if plant.isWatered {
+            waterButton.isEnabled = false
+            DispatchQueue.main.async {
+                self.waterButton.isHidden = true
+            }
+        //    waterButton.isHidden = true
+        }
+    }
+
+    
 }
