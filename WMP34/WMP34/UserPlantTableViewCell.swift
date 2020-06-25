@@ -35,7 +35,7 @@ class UserPlantTableViewCell: UITableViewCell {
         
         updateViews()
         
-        runTimer()
+        //runTimer()
         
     }
     

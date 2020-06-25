@@ -81,7 +81,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kew-gn-eze">
                             <connections>
-                                <segue destination="kbM-9i-S1H" kind="presentation" identifier="AddNewPlant" id="KRi-aL-pH5"/>
+                                <segue destination="htq-fV-7rg" kind="presentation" identifier="AddNewPlant" id="3tD-yf-0BD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -126,11 +126,11 @@
             <objects>
                 <viewController id="kbM-9i-S1H" customClass="PlantDetailViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMG-cm-IeC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="iN9-19-Q3q">
-                                <rect key="frame" x="15" y="50" width="384" height="135"/>
+                                <rect key="frame" x="15" y="190" width="384" height="135"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g8R-EP-kgW">
                                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="135"/>
@@ -178,24 +178,18 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K20-I1-ck1">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="746" width="414" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="savePlantTapped:" destination="kbM-9i-S1H" eventType="touchUpInside" id="GVa-i0-NRj"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFr-ou-kfH">
-                                <rect key="frame" x="0.0" y="744" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="798" width="414" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="kbM-9i-S1H" eventType="touchUpInside" id="NjL-Ud-lpO"/>
-                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Krz-Ec-IZ6">
                                 <rect key="frame" x="0.0" y="680" width="414" height="216"/>
@@ -230,9 +224,116 @@
             </objects>
             <point key="canvasLocation" x="3226" y="-313"/>
         </scene>
+        <!--Add a new plant-->
+        <scene sceneID="1Wq-FT-wN1">
+            <objects>
+                <viewController id="htq-fV-7rg" customClass="CreateNewPlantViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RGc-AQ-zFm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="dGI-SI-RLS">
+                                <rect key="frame" x="15" y="50" width="384" height="135"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="btg-EO-08b">
+                                        <rect key="frame" x="0.0" y="0.0" width="139.5" height="135"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf3-Sr-K4y">
+                                                <rect key="frame" x="0.0" y="0.0" width="139.5" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKr-yp-VSm">
+                                                <rect key="frame" x="0.0" y="50" width="139.5" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W3-I3-x5W">
+                                                <rect key="frame" x="0.0" y="100" width="139.5" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ISn-f3-Zl2">
+                                        <rect key="frame" x="175.5" y="0.0" width="208.5" height="135"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-DJ-eBH">
+                                                <rect key="frame" x="0.0" y="0.0" width="208.5" height="37"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-Gl-3Az">
+                                                <rect key="frame" x="0.0" y="52" width="208.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KOS-M2-Ncd">
+                                                <rect key="frame" x="0.0" y="101" width="208.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7I-Ud-9qu">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="htq-fV-7rg" eventType="touchUpInside" id="1rS-N3-Gmt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hQ-CF-9GD">
+                                <rect key="frame" x="0.0" y="744" width="414" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="htq-fV-7rg" eventType="touchUpInside" id="umO-RL-typ"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lag-pz-c3A">
+                                <rect key="frame" x="0.0" y="680" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dGI-SI-RLS" firstAttribute="leading" secondItem="wct-T4-9AB" secondAttribute="leading" constant="15" id="2HS-sD-6Ka"/>
+                            <constraint firstItem="dGI-SI-RLS" firstAttribute="top" secondItem="wct-T4-9AB" secondAttribute="top" constant="50" id="3hb-F7-Ze0"/>
+                            <constraint firstItem="Y7I-Ud-9qu" firstAttribute="leading" secondItem="wct-T4-9AB" secondAttribute="leading" id="B0w-KU-tb1"/>
+                            <constraint firstItem="6hQ-CF-9GD" firstAttribute="leading" secondItem="wct-T4-9AB" secondAttribute="leading" id="SbZ-5v-uXI"/>
+                            <constraint firstItem="wct-T4-9AB" firstAttribute="trailing" secondItem="6hQ-CF-9GD" secondAttribute="trailing" id="T3k-PK-W4p"/>
+                            <constraint firstItem="wct-T4-9AB" firstAttribute="trailing" secondItem="Y7I-Ud-9qu" secondAttribute="trailing" id="UO4-dV-bh2"/>
+                            <constraint firstItem="wct-T4-9AB" firstAttribute="bottom" secondItem="6hQ-CF-9GD" secondAttribute="bottom" constant="20" id="Y1Y-vX-M0p"/>
+                            <constraint firstItem="wct-T4-9AB" firstAttribute="trailing" secondItem="dGI-SI-RLS" secondAttribute="trailing" constant="15" id="rWy-xp-Xbg"/>
+                            <constraint firstItem="6hQ-CF-9GD" firstAttribute="top" secondItem="Y7I-Ud-9qu" secondAttribute="bottom" constant="8" id="z1l-MD-EZX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wct-T4-9AB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add a new plant" id="IcH-6H-xHT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="qNg-5A-HEE"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="frequency" destination="KOS-M2-Ncd" id="wEw-8T-Vnr"/>
+                        <outlet property="plantname" destination="zJh-DJ-eBH" id="7ju-ra-500"/>
+                        <outlet property="species" destination="nHE-Gl-3Az" id="3YL-vR-PtV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHz-wd-ss6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3225" y="-953"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KRi-aL-pH5"/>
         <segue reference="THI-p5-Arg"/>
     </inferredMetricsTieBreakers>
     <resources>

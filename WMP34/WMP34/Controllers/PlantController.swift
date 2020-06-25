@@ -64,7 +64,7 @@ class PlantController {
         }.resume()
     }
     
-    func sendPlantToServer(plant: PlantRepresentation, completion: @escaping CompletionHandler = { _ in }) {
+    func sendPlantToServer(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
         guard let token = userController.token?.access_token else {
             NSLog("Token object was found to be nil, aborting")
             return
@@ -79,7 +79,11 @@ class PlantController {
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         do {
-            request.httpBody = try JSONEncoder().encode(plant)
+            guard let representation = plant.plantRepresentation else {
+                completion(.failure(.failedEncode))
+                return
+            }
+            request.httpBody = try JSONEncoder().encode(representation)
         } catch {
             NSLog("Error encoding plant \(plant): \(error)")
             completion(.failure(.failedEncode))
@@ -101,6 +105,8 @@ class PlantController {
         /*
          DELETE - /api/plants/{plantid} - Delete the plant by plant id
         */
+        
+        
     }
     
     func updatePlantOnServer(plant: Plant, completion: @escaping CompletionHandler = { _ in }) {

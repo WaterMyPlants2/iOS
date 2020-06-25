@@ -13,12 +13,11 @@ class PlantDetailViewController: UIViewController {
     
     var plantController: PlantController?
     var plant: Plant?
-    var plantRep: PlantRepresentation?
+    var wasEdited = false
     
     @IBOutlet weak var plantName: UITextField!
     @IBOutlet weak var scientificName: UITextField!
     @IBOutlet weak var frequency: UITextField!
-    
     @IBOutlet weak var picker: UIPickerView!
     
     
@@ -27,61 +26,65 @@ class PlantDetailViewController: UIViewController {
         super.viewDidLoad()
         
         picker.delegate = self
+        navigationItem.rightBarButtonItem = editButtonItem
+        updateViews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if wasEdited {
+            guard let plantName = plantName.text,
+            !plantName.isEmpty,
+                let plant = plant else { return }
+            
+            let h20Frequency = frequency.text
+            let scientficName = scientificName.text
+            plant.nickname = plantName
+            plant.h2ofrequency = h20Frequency
+            plant.species = scientficName
+            
+            plantController?.sendPlantToServer(plant: plant)
+            do {
+                try CoreDataStack.shared.save()
+            } catch {
+                NSLog("Error saving managed object context (during task edit): \(error)")
+                
+            }
+        }
         
     }
     
-    @IBAction func savePlantTapped(_ sender: Any) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
         
-        guard let plantName = plantName.text,
-            !plantName.isEmpty,
-            let scientificName = scientificName.text,
-            !scientificName.isEmpty
-            else { return }
+        if editing { wasEdited = true }
         
-//        if let plant = plant {
-//            plant.nickname = plantName
-//            plant.species = scientificName
-            //let h20FrequencyDouble = determineFrequency()
-            //plant.h2ofrequency = String(h20FrequencyDouble)
-            
-        if let plant = plant {
-            plant.nickname = plantName
-            plant.species = scientificName
-            let plantRepresentation = PlantRepresentation(h2ofrequency: "", species: scientificName, image: "", nickname: plantName)
-            
-            plantController?.sendPlantToServer(plant: plantRepresentation, completion: { (result) in
-                           switch result {
-                           case .success(_):
-                               print("Success")
-                           case .failure(_):
-                               print("Failure")
-                           }
-                       })
-        } else {
-            let plantRep = PlantRepresentation(h2ofrequency: "", species: scientificName, image: "", nickname: plantName)
-            plantController?.sendPlantToServer(plant: plantRep, completion: { (result) in
-                switch result {
-                case .success(_):
-                    print("Success")
-                case .failure(_):
-                    print("Failure")
-                }
-            })
-            
-        }
-            do {
-                try CoreDataStack.shared.mainContext.save()
-                dismiss(animated: true, completion: nil)
-            } catch {
-                NSLog("Error saving managed object context: \(error)")
-            }
-            
-            
-//        }
+        plantName.isUserInteractionEnabled = editing
+        frequency.isUserInteractionEnabled = editing
+        scientificName.isUserInteractionEnabled = editing
+        
+        navigationItem.hidesBackButton = editing
     }
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    
+    func updateViews() {
+        scientificName.text = plant?.species
+        scientificName.isUserInteractionEnabled = isEditing
+        
+        frequency.text = plant?.h2ofrequency
+        frequency.isUserInteractionEnabled = isEditing
+        
+        plantName.text = plant?.nickname
+        plantName.isUserInteractionEnabled = isEditing
+        
+        
     }
+    
+    
+    
+    
+    
+    
     
     
     
