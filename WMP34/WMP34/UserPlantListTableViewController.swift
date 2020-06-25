@@ -48,7 +48,7 @@ class UserPlantListTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -68,7 +68,7 @@ class UserPlantListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserPlantCell", for: indexPath) as? UserPlantTableViewCell else { fatalError() }
         
         cell.plant = fetchedResultsController.object(at: indexPath)
-        
+        cell.delegate = self
         return cell
     }
     
@@ -195,14 +195,14 @@ extension UserPlantListTableViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
-//extension PlantsTableViewController: PlantCellDelegate {
-//    func timerDidFire(plant: Plant) {
-//        showAlert(title: "Water is required", message: "\(plant.commonName ?? "egg") needs water badly")
-//    }
-//
-//    func showAlert(title: String, message: String){
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//        present(alert, animated: true)
-//    }
-//}
+extension UserPlantListTableViewController: PlantCellDelegate {
+    func timerDidFire(plant: Plant) {
+        showAlert(title: "Water is required", message: "\(plant.nickname ?? "egg") needs water badly")
+    }
+
+    func showAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+}

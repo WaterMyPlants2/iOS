@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserPlantCell" rowHeight="102" id="Xud-hH-4l1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserPlantCell" rowHeight="102" id="Xud-hH-4l1" customClass="UserPlantTableViewCell" customModule="WMP34" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xud-hH-4l1" id="2Yp-u3-SvE">
@@ -46,6 +46,9 @@
                                                 <constraint firstAttribute="width" secondItem="ubM-Vv-ltL" secondAttribute="height" multiplier="1:1" id="xAJ-5z-Akk"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="0000"/>
+                                            <connections>
+                                                <action selector="waterPlantButtonTapped:" destination="Xud-hH-4l1" eventType="touchUpInside" id="2aT-9e-y8F"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -57,6 +60,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="plantName" destination="21e-41-HdG" id="o39-EZ-dpt"/>
+                                    <outlet property="plantSpecies" destination="lnQ-wn-dwL" id="etv-qT-hhN"/>
+                                    <outlet property="plantWasWateredButton" destination="ubM-Vv-ltL" id="Lgo-cJ-WJV"/>
+                                    <outlet property="waterPlantButton" destination="ubM-Vv-ltL" id="CIQ-Rn-tA6"/>
                                     <segue destination="kbM-9i-S1H" kind="show" identifier="PlantDetail" id="uTQ-Uf-S1n"/>
                                 </connections>
                             </tableViewCell>
@@ -74,7 +81,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kew-gn-eze">
                             <connections>
-                                <segue destination="kbM-9i-S1H" kind="show" identifier="AddNewPlant" id="KRi-aL-pH5"/>
+                                <segue destination="kbM-9i-S1H" kind="presentation" identifier="AddNewPlant" id="KRi-aL-pH5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -119,11 +126,11 @@
             <objects>
                 <viewController id="kbM-9i-S1H" customClass="PlantDetailViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMG-cm-IeC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="iN9-19-Q3q">
-                                <rect key="frame" x="15" y="190" width="384" height="135"/>
+                                <rect key="frame" x="15" y="50" width="384" height="135"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g8R-EP-kgW">
                                         <rect key="frame" x="0.0" y="0.0" width="139.5" height="135"/>
@@ -171,7 +178,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K20-I1-ck1">
-                                <rect key="frame" x="0.0" y="746" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -181,7 +188,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFr-ou-kfH">
-                                <rect key="frame" x="0.0" y="798" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="744" width="414" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -225,7 +232,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uTQ-Uf-S1n"/>
+        <segue reference="KRi-aL-pH5"/>
         <segue reference="THI-p5-Arg"/>
     </inferredMetricsTieBreakers>
     <resources>

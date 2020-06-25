@@ -13,18 +13,19 @@ class PlantDetailViewController: UIViewController {
     
     var plantController: PlantController?
     var plant: Plant?
+    var plantRep: PlantRepresentation?
     
     @IBOutlet weak var plantName: UITextField!
     @IBOutlet weak var scientificName: UITextField!
     @IBOutlet weak var frequency: UITextField!
-
+    
     @IBOutlet weak var picker: UIPickerView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         picker.delegate = self
         
     }
@@ -32,20 +33,33 @@ class PlantDetailViewController: UIViewController {
     @IBAction func savePlantTapped(_ sender: Any) {
         
         guard let plantName = plantName.text,
-        !plantName.isEmpty,
-        let scientificName = scientificName.text,
-        !scientificName.isEmpty
+            !plantName.isEmpty,
+            let scientificName = scientificName.text,
+            !scientificName.isEmpty
             else { return }
         
-       // if let plant = plant {
+//        if let plant = plant {
 //            plant.nickname = plantName
 //            plant.species = scientificName
-//            let h20FrequencyDouble = determineFrequency()
-//            plant.h2ofrequency = String(h20FrequencyDouble)
+            //let h20FrequencyDouble = determineFrequency()
+            //plant.h2ofrequency = String(h20FrequencyDouble)
             
+        if let plant = plant {
+            plant.nickname = plantName
+            plant.species = scientificName
             let plantRepresentation = PlantRepresentation(h2ofrequency: "", species: scientificName, image: "", nickname: plantName)
             
             plantController?.sendPlantToServer(plant: plantRepresentation, completion: { (result) in
+                           switch result {
+                           case .success(_):
+                               print("Success")
+                           case .failure(_):
+                               print("Failure")
+                           }
+                       })
+        } else {
+            let plantRep = PlantRepresentation(h2ofrequency: "", species: scientificName, image: "", nickname: plantName)
+            plantController?.sendPlantToServer(plant: plantRep, completion: { (result) in
                 switch result {
                 case .success(_):
                     print("Success")
@@ -53,18 +67,20 @@ class PlantDetailViewController: UIViewController {
                     print("Failure")
                 }
             })
-        //}
-       
-        do {
-            try CoreDataStack.shared.mainContext.save()
-        } catch {
-            NSLog("Error saving managed object context: \(error)")
+            
         }
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-        
+            do {
+                try CoreDataStack.shared.mainContext.save()
+                dismiss(animated: true, completion: nil)
+            } catch {
+                NSLog("Error saving managed object context: \(error)")
+            }
+            
+            
+//        }
     }
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -108,7 +124,7 @@ class PlantDetailViewController: UIViewController {
         guard let plant = plant else { return nil }
         
         guard let plantH20 = Int(plant.h2ofrequency!) else { return nil}
-
+        
         switch plantH20 {
         case 86400:
             return PickerOptions.onceADay.rawValue
