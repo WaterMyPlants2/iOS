@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="PLI-j2-sps">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oX-jP-vO2" userLabel="UsernameView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="177"/>
                                 <subviews>
@@ -122,13 +125,18 @@
                             <constraint firstItem="Jxk-EM-cvM" firstAttribute="leading" secondItem="URP-D8-O17" secondAttribute="leading" id="BD5-LK-ZOt"/>
                             <constraint firstItem="Jxk-EM-cvM" firstAttribute="trailing" secondItem="URP-D8-O17" secondAttribute="trailing" id="CFE-A2-F51"/>
                             <constraint firstItem="8xH-rd-rhV" firstAttribute="trailing" secondItem="URP-D8-O17" secondAttribute="trailing" id="ICz-e1-Gi4"/>
+                            <constraint firstItem="PLI-j2-sps" firstAttribute="trailing" secondItem="URP-D8-O17" secondAttribute="trailing" id="M3r-Ab-JSK"/>
+                            <constraint firstItem="PLI-j2-sps" firstAttribute="leading" secondItem="URP-D8-O17" secondAttribute="leading" id="Q8T-fW-9yq"/>
                             <constraint firstItem="8xH-rd-rhV" firstAttribute="leading" secondItem="URP-D8-O17" secondAttribute="leading" id="Ueh-aH-bKn"/>
                             <constraint firstItem="Jxk-EM-cvM" firstAttribute="top" secondItem="8xH-rd-rhV" secondAttribute="bottom" constant="57.5" id="bNy-1l-Yck"/>
                             <constraint firstItem="7oX-jP-vO2" firstAttribute="top" secondItem="URP-D8-O17" secondAttribute="top" id="dUR-aS-YJb"/>
+                            <constraint firstAttribute="bottom" secondItem="PLI-j2-sps" secondAttribute="bottom" id="dwL-Vc-tog"/>
+                            <constraint firstItem="PLI-j2-sps" firstAttribute="top" secondItem="URP-D8-O17" secondAttribute="top" id="jC7-Ur-Do3"/>
                             <constraint firstItem="ZTT-zI-pGG" firstAttribute="width" secondItem="Foz-jS-3lp" secondAttribute="width" multiplier="1.00966" id="khL-0y-dIh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="URP-D8-O17"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vbr-5V-JhU"/>
                     <connections>
                         <outlet property="passwordTextField" destination="3pS-oD-LTM" id="Bwb-0n-IY6"/>
                         <outlet property="phonenumberTextField" destination="K2l-sm-TPy" id="aJu-GH-pyh"/>
@@ -137,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lA-0I-a5L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1222" y="-129"/>
+            <point key="canvasLocation" x="-1223.1884057971015" y="-129.24107142857142"/>
         </scene>
         <!--SignIn-->
         <scene sceneID="oxO-uy-Urh">
@@ -147,6 +155,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background3" translatesAutoresizingMaskIntoConstraints="NO" id="XEU-aB-0aw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edM-sE-crO" userLabel="UsernameView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="177"/>
                                 <subviews>
@@ -227,7 +238,11 @@
                             <constraint firstItem="edM-sE-crO" firstAttribute="leading" secondItem="p1M-7x-pyJ" secondAttribute="leading" id="BxC-F5-ApX"/>
                             <constraint firstItem="Ago-Nx-Swh" firstAttribute="top" secondItem="bHX-xP-1Oc" secondAttribute="bottom" constant="129" id="DLi-1O-kkj"/>
                             <constraint firstItem="p1M-7x-pyJ" firstAttribute="trailing" secondItem="Fhx-Tb-Sy2" secondAttribute="trailing" id="LW3-jq-2iw"/>
+                            <constraint firstItem="XEU-aB-0aw" firstAttribute="trailing" secondItem="p1M-7x-pyJ" secondAttribute="trailing" id="WqM-B7-6k4"/>
+                            <constraint firstAttribute="bottom" secondItem="XEU-aB-0aw" secondAttribute="bottom" id="ZNP-fG-F8B"/>
                             <constraint firstItem="p1M-7x-pyJ" firstAttribute="trailing" secondItem="edM-sE-crO" secondAttribute="trailing" id="aPL-CF-slx"/>
+                            <constraint firstItem="XEU-aB-0aw" firstAttribute="leading" secondItem="p1M-7x-pyJ" secondAttribute="leading" id="cEg-NU-bzy"/>
+                            <constraint firstItem="XEU-aB-0aw" firstAttribute="top" secondItem="trU-QG-jy8" secondAttribute="top" id="pmn-ts-rlJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p1M-7x-pyJ"/>
                     </view>
@@ -239,10 +254,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEb-jt-WIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-496" y="-129"/>
+            <point key="canvasLocation" x="-497.10144927536237" y="-129.24107142857142"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background2" width="2741" height="3657"/>
+        <image name="background3" width="5304" height="7952"/>
         <image name="textfield" width="298" height="93"/>
     </resources>
 </document>
