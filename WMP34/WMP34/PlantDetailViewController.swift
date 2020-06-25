@@ -51,6 +51,8 @@ class PlantDetailViewController: UIViewController {
         speciesTextField.text = plant?.species
         frequencyTextField.text = determineFrequencyText()
         
+        title = plant?.nickname ?? "Add a new plant"
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +61,7 @@ class PlantDetailViewController: UIViewController {
         if plantNameTxtField.isEmpty {
             plantNameTextField.becomeFirstResponder()
         }
+        
     }
     
     // MARK: - Actions

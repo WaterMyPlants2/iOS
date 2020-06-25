@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CmJ-EH-uCx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CmJ-EH-uCx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -24,17 +24,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-Qf-mf4">
-                                            <rect key="frame" x="23" y="-2" width="89.5" height="106"/>
+                                            <rect key="frame" x="23" y="6.5" width="73.5" height="89"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21e-41-HdG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="89.5" height="45.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="21e-41-HdG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="73.5" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnQ-wn-dwL">
-                                                    <rect key="frame" x="0.0" y="60.5" width="89.5" height="45.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lnQ-wn-dwL">
+                                                    <rect key="frame" x="0.0" y="52" width="73.5" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -76,12 +76,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Plants" id="hrx-P5-WFx">
-                        <barButtonItem key="leftBarButtonItem" title="REGISTER TEST" id="LtS-gO-DSk">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="LtS-gO-DSk">
                             <connections>
-                                <segue destination="8D8-NL-kZB" kind="show" id="THI-p5-Arg"/>
+                                <action selector="signOutButtonTapped:" destination="bIp-Lx-Qlb" id="XKx-eI-6R1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kew-gn-eze">
+                        <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="kew-gn-eze">
                             <connections>
                                 <segue destination="kbM-9i-S1H" kind="show" identifier="AddNewPlant" id="qnT-IJ-EXv"/>
                             </connections>
@@ -230,9 +230,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="uTQ-Uf-S1n"/>
-        <segue reference="THI-p5-Arg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0000" width="266.5" height="266.5"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
