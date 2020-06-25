@@ -16,7 +16,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          let imageView = UIImageView()
          imageView.heightAnchor.constraint(equalToConstant: 10.0).isActive = true
          imageView.widthAnchor.constraint(equalToConstant: 10.0).isActive = true
-         imageView.image = UIImage(named: "fullDrop")
+         imageView.image = UIImage(named: "fullDrop-2")
          return imageView
      }()
      
@@ -24,7 +24,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          let imageView = UIImageView()
          imageView.heightAnchor.constraint(equalToConstant: 10.0).isActive = true
          imageView.widthAnchor.constraint(equalToConstant: 10.0).isActive = true
-         imageView.image = UIImage(named: "emptyDrop")
+         imageView.image = UIImage(named: "emptyDrop-2")
          return imageView
      }()
      
@@ -32,7 +32,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          let imageView = UIImageView()
          imageView.heightAnchor.constraint(equalToConstant: 10.0).isActive = true
          imageView.widthAnchor.constraint(equalToConstant: 10.0).isActive = true
-         imageView.image = UIImage(named: "emptyDrop")
+         imageView.image = UIImage(named: "emptyDrop-2")
          return imageView
      }()
      
@@ -40,7 +40,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          let imageView = UIImageView()
          imageView.heightAnchor.constraint(equalToConstant: 10.0).isActive = true
          imageView.widthAnchor.constraint(equalToConstant: 10.0).isActive = true
-         imageView.image = UIImage(named: "emptyDrop")
+         imageView.image = UIImage(named: "emptyDrop-2")
          return imageView
      }()
      
@@ -48,7 +48,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
          let imageView = UIImageView()
          imageView.heightAnchor.constraint(equalToConstant: 10.0).isActive = true
          imageView.widthAnchor.constraint(equalToConstant: 10.0).isActive = true
-         imageView.image = UIImage(named: "emptyDrop")
+         imageView.image = UIImage(named: "emptyDrop-2")
          return imageView
      }()
      
