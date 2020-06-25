@@ -77,7 +77,6 @@ class PlantDetailViewController: UIViewController {
         plantName.text = plant?.nickname
         plantName.isUserInteractionEnabled = isEditing
         
-        
     }
     
     
