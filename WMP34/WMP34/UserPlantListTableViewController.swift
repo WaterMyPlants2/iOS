@@ -68,7 +68,7 @@ class UserPlantListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserPlantCell", for: indexPath) as? UserPlantTableViewCell else { fatalError() }
         
         cell.plant = fetchedResultsController.object(at: indexPath)
-        //cell.delegate = self
+        cell.delegate = self
         return cell
     }
     
@@ -112,30 +112,6 @@ class UserPlantListTableViewController: UITableViewController {
             
         }
     }
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     private func presentRegisterView() {
         let loginAndRegisterStoryBoard = UIStoryboard(name: "Login-Register", bundle: Bundle(identifier: "CasanovaStudios.WMP34"))
@@ -197,6 +173,7 @@ extension UserPlantListTableViewController: NSFetchedResultsControllerDelegate {
 
 extension UserPlantListTableViewController: PlantCellDelegate {
     func timerDidFire(plant: Plant) {
+        print("it made it to the timer")
         showAlert(title: "Water is required", message: "\(plant.nickname ?? "egg") needs water badly")
     }
 

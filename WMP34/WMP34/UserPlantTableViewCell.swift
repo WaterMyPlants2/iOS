@@ -35,16 +35,18 @@ class UserPlantTableViewCell: UITableViewCell {
         
         updateViews()
         
-        //runTimer()
+        runTimer()
         
     }
     
     private func runTimer() {
-        guard let plant = plant else { return }
+        
+        guard let plant = plant else {return}
         let planth20 = Int(plant.h2ofrequency!)
         let plantH20Double = Double(planth20!)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + plantH20Double) {
+            plant.isWatered = false
             self.updateViews()
             self.delegate?.timerDidFire(plant: plant)
         }
