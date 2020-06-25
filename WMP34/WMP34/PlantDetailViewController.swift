@@ -53,6 +53,14 @@ class PlantDetailViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        //This is just to make it easier for user to input text.
+        guard let plantNameTxtField = plantNameTextField.text else { return }
+        if plantNameTxtField.isEmpty {
+            plantNameTextField.becomeFirstResponder()
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func savePlantButton(_ sender: Any) {
