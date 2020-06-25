@@ -24,26 +24,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-Qf-mf4">
-                                            <rect key="frame" x="23" y="14" width="52.5" height="68"/>
+                                            <rect key="frame" x="23" y="-2" width="89.5" height="106"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21e-41-HdG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="52.5" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="89.5" height="45.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnQ-wn-dwL">
-                                                    <rect key="frame" x="0.0" y="41.5" width="52.5" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="0.0" y="60.5" width="89.5" height="45.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubM-Vv-ltL">
-                                            <rect key="frame" x="307" y="0.0" width="102" height="102"/>
+                                            <rect key="frame" x="294" y="0.0" width="100" height="102"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="ubM-Vv-ltL" secondAttribute="height" multiplier="1:1" id="xAJ-5z-Akk"/>
+                                                <constraint firstAttribute="width" constant="100" id="gpv-8A-B8k"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="0000"/>
                                             <connections>
@@ -52,11 +52,13 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ubM-Vv-ltL" firstAttribute="top" secondItem="2Yp-u3-SvE" secondAttribute="top" id="48c-hJ-mbT"/>
-                                        <constraint firstAttribute="trailing" secondItem="ubM-Vv-ltL" secondAttribute="trailing" constant="5" id="Trq-1A-dnF"/>
-                                        <constraint firstItem="iMf-Qf-mf4" firstAttribute="leading" secondItem="2Yp-u3-SvE" secondAttribute="leadingMargin" constant="3" id="eZZ-r2-26N"/>
-                                        <constraint firstAttribute="bottom" secondItem="ubM-Vv-ltL" secondAttribute="bottom" id="mhX-M3-4tR"/>
-                                        <constraint firstItem="iMf-Qf-mf4" firstAttribute="top" secondItem="2Yp-u3-SvE" secondAttribute="topMargin" constant="3" id="xdh-qz-EbI"/>
+                                        <constraint firstItem="ubM-Vv-ltL" firstAttribute="top" secondItem="2Yp-u3-SvE" secondAttribute="top" id="5vl-3m-idv"/>
+                                        <constraint firstItem="ubM-Vv-ltL" firstAttribute="centerY" secondItem="2Yp-u3-SvE" secondAttribute="centerY" id="J4p-65-3H7"/>
+                                        <constraint firstItem="ubM-Vv-ltL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iMf-Qf-mf4" secondAttribute="trailing" constant="8" id="ey6-bY-ZRe"/>
+                                        <constraint firstItem="ubM-Vv-ltL" firstAttribute="trailing" secondItem="2Yp-u3-SvE" secondAttribute="trailingMargin" id="g7j-rg-uJ4"/>
+                                        <constraint firstItem="iMf-Qf-mf4" firstAttribute="centerY" secondItem="2Yp-u3-SvE" secondAttribute="centerY" id="j8x-R0-qMx"/>
+                                        <constraint firstItem="iMf-Qf-mf4" firstAttribute="leading" secondItem="2Yp-u3-SvE" secondAttribute="leadingMargin" constant="3" id="jA3-7z-ksC"/>
+                                        <constraint firstAttribute="bottom" secondItem="ubM-Vv-ltL" secondAttribute="bottom" id="jKb-UM-oKm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -91,7 +93,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxf-Mr-Vyv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="-313"/>
+            <point key="canvasLocation" x="2476.811594202899" y="-313.39285714285711"/>
         </scene>
         <!--Login-Register-->
         <scene sceneID="eMc-oG-vZe">
