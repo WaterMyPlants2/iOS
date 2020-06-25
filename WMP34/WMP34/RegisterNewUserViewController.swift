@@ -23,7 +23,7 @@ class RegisterNewUserViewController: UIViewController {
         usernameTextField.autocorrectionType = .no
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
-        //usernameTextField.becomeFirstResponder()
+        usernameTextField.becomeFirstResponder()
     }
     
     @IBAction func registerNewUser(_ sender: UIButton) {
@@ -37,8 +37,6 @@ class RegisterNewUserViewController: UIViewController {
                 showAlert(title: "Unable to register!", message: "Please fill in all fields before moving on.")
                 return
         }
-        
-        //TODO: Implement method for registering a new user.
         
         userController.registerUser(username: username, password: password, phonenumber: phonenumber) { (result) in
             switch result {
