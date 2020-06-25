@@ -178,7 +178,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
         let cgrec = CGRect(x: 0, y: 0, width: 100, height: 100)
         
         let button = UIButton(frame: cgrec)
-        button.setImage(UIImage(named: "waterElement"), for: .normal)
+        button.setImage(UIImage(named: "watering-can"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
         

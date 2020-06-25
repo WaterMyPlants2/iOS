@@ -53,8 +53,8 @@ class AddPlantViewController: UIViewController {
     }
     
     @objc func savePlantButton() {
-        guard let commonName = nickName.text,
-            let scientificName = speciesName.text else { return }
+        guard let commonName = nickName.text, commonName != "",
+            let scientificName = speciesName.text, scientificName != "", let frequencyText = frequency.text, frequencyText != "" else { return }
         
         if let plant = plant {
             plant.nickname = commonName
@@ -243,7 +243,7 @@ class AddPlantViewController: UIViewController {
         let cgrec = CGRect(x: 0, y: 0, width: 50, height: 50)
         
         let button = UIButton(frame: cgrec)
-        button.setImage(UIImage(named: "waterElement"), for: .normal)
+        button.setImage(UIImage(named: "water-drop"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
   //      button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(savePlantButton), for: .touchUpInside)
