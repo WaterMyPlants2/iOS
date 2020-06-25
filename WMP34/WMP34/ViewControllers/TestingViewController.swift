@@ -177,11 +177,11 @@ extension TestingViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y >= -104 {
-            print("its not 0: \(scrollView.contentOffset.y)")
+        //    print("its not 0: \(scrollView.contentOffset.y)")
             logoutBarButtonItem?.tintColor = UIColor.systemGreen
             addBarButtonItem?.tintColor = UIColor.systemGreen
         } else {
-            print("its 0")
+      //      print("its 0")
             logoutBarButtonItem?.tintColor = UIColor.white
             addBarButtonItem?.tintColor = UIColor.white
         }

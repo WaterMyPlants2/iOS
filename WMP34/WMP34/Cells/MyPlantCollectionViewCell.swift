@@ -181,7 +181,6 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
         button.setImage(UIImage(named: "waterElement"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(waterPlantButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -208,6 +207,7 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
     
     var plant: Plant? {
         didSet{
+            waterButton.addTarget(self, action: #selector(waterPlantButtonTapped), for: .touchUpInside)
             updateViews()
         }
     }
@@ -217,7 +217,6 @@ class MyPlantCollectionViewCell: UICollectionViewCell {
     var plantIsWatered: Bool = false
     
     @objc func waterPlantButtonTapped() {
-        print("OK THE BUTTON WAS TAPPED")
         guard let plant = plant else { return }
         plant.isWatered.toggle()
         
