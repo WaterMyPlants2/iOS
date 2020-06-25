@@ -26,6 +26,7 @@
 		7F9278C024A1113800E22D33 /* WMP34UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278BF24A1113800E22D33 /* WMP34UITests.swift */; };
 		BEAFA11524A406D0005FC95F /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFA11424A406D0005FC95F /* Plant+Convenience.swift */; };
 		BEAFA11724A408E8005FC95F /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFA11624A408E8005FC95F /* PlantRepresentation.swift */; };
+		C41D347824A52A7500504522 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D347724A52A7500504522 /* AddPlantViewController.swift */; };
 		C45488A024A2744800C29ACE /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C454889F24A2744800C29ACE /* User+Convenience.swift */; };
 		C45488A224A2746F00C29ACE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45488A124A2746F00C29ACE /* CoreDataStack.swift */; };
 		C45488A424A274E000C29ACE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45488A324A274E000C29ACE /* NetworkError.swift */; };
@@ -81,6 +82,7 @@
 		BEAFA11324A3FE60005FC95F /* WMP 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMP 2.xcdatamodel"; sourceTree = "<group>"; };
 		BEAFA11424A406D0005FC95F /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		BEAFA11624A408E8005FC95F /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
+		C41D347724A52A7500504522 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		C454889F24A2744800C29ACE /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		C45488A124A2746F00C29ACE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C45488A324A274E000C29ACE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				C4BF41EE24A145D60070FCE9 /* TestingViewController.swift */,
+				C41D347724A52A7500504522 /* AddPlantViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				C45488A424A274E000C29ACE /* NetworkError.swift in Sources */,
 				C45488AB24A2765A00C29ACE /* UserController.swift in Sources */,
 				C4BF41F224A146860070FCE9 /* MyPlantCollectionViewCell.swift in Sources */,
+				C41D347824A52A7500504522 /* AddPlantViewController.swift in Sources */,
 				C4BF41EF24A145D60070FCE9 /* TestingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
