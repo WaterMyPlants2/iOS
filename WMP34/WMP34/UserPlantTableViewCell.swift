@@ -17,8 +17,13 @@ class UserPlantTableViewCell: UITableViewCell {
     @IBOutlet weak var plantName: UILabel!
     @IBOutlet weak var plantSpecies: UILabel!
     @IBOutlet weak var plantWasWateredButton: UIButton!
-
-    var plant: Plant?
+    @IBOutlet weak var waterPlantButton: UIButton!
+    
+    var plant: Plant? {
+        didSet{
+            updateViews()
+        }
+    }
     
     var delegate: PlantCellDelegate?
 
@@ -26,7 +31,11 @@ class UserPlantTableViewCell: UITableViewCell {
     
     @IBAction func waterPlantButtonTapped(_ sender: UIButton) {
         guard let plant = plant else { return }
+        plant.isWatered.toggle()
         
+        updateViews()
+        
+        runTimer()
         
     }
     
@@ -47,13 +56,13 @@ class UserPlantTableViewCell: UITableViewCell {
         plantName.text = plant.nickname
         plantSpecies.text = plant.species
         
-//        if plant.isWatered == false {
-//            plantWateredButton.isEnabled = true
-//            plantWateredButton.setImage(#imageLiteral(resourceName: "UncoloredPlantUpset.png") , for: .normal)
-//        } else if plant.isWatered {
-//            plantWateredButton.isEnabled = false
-//            plantWateredButton.setImage( #imageLiteral(resourceName: "UncoloredPlant.png") , for: .normal)
-//        }
+        if plant.isWatered == false {
+            waterPlantButton.isEnabled = true
+            waterPlantButton.setImage(#imageLiteral(resourceName: "0000") , for: .normal)
+        } else if plant.isWatered {
+            waterPlantButton.isEnabled = false
+            waterPlantButton.setImage( #imageLiteral(resourceName: "00001") , for: .normal)
+        }
     }
 
     
