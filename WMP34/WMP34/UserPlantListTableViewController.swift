@@ -68,7 +68,7 @@ class UserPlantListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserPlantCell", for: indexPath) as? UserPlantTableViewCell else { fatalError() }
         
         cell.plant = fetchedResultsController.object(at: indexPath)
-        cell.delegate = self
+        //cell.delegate = self
         return cell
     }
     
