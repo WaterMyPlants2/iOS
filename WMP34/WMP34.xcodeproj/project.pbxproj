@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38BE686601364EDBCF972267 /* Pods_WMP34_WMP34UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7313B8A82B334F5D76A94F8 /* Pods_WMP34_WMP34UITests.framework */; };
+		503E3B5824A66249004636C0 /* autocorrect.yml in Resources */ = {isa = PBXBuildFile; fileRef = 503E3B5724A66249004636C0 /* autocorrect.yml */; };
 		5051734124A1487C004F068B /* RegisterNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051734024A1487C004F068B /* RegisterNewUserViewController.swift */; };
 		5051734324A148F9004F068B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051734224A148F8004F068B /* SignInViewController.swift */; };
 		5051734524A271A1004F068B /* Login-Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5051734424A271A1004F068B /* Login-Register.storyboard */; };
@@ -29,7 +30,6 @@
 		7FD5815624A5B46D00A39EBF /* MockDataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5815524A5B46D00A39EBF /* MockDataLoading.swift */; };
 		7FD5815824A5B57500A39EBF /* mockJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5815724A5B57500A39EBF /* mockJSON.swift */; };
 		7FD5815D24A5C82100A39EBF /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5815C24A5C82100A39EBF /* swiftlint.yml */; };
-		7FD5815F24A5C96800A39EBF /* autocorrect.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5815E24A5C96800A39EBF /* autocorrect.yml */; };
 		A7DACD557296A981AA2C5391 /* Pods_WMP34.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9934D15663FFE192B3287BEB /* Pods_WMP34.framework */; };
 		AFC7410D1CF41C1AF4DD1862 /* Pods_WMP34Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A64C6C88780541B05D2DD20 /* Pods_WMP34Tests.framework */; };
 		BEAFA11524A406D0005FC95F /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFA11424A406D0005FC95F /* Plant+Convenience.swift */; };
@@ -66,6 +66,7 @@
 		01CC6ABDE1E3E7B7AF88B9D7 /* Pods-WMP34.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34.release.xcconfig"; path = "Target Support Files/Pods-WMP34/Pods-WMP34.release.xcconfig"; sourceTree = "<group>"; };
 		0A64C6C88780541B05D2DD20 /* Pods_WMP34Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WMP34Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D05E712DC437730AB7F0AB /* Pods-WMP34-WMP34UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34-WMP34UITests.debug.xcconfig"; path = "Target Support Files/Pods-WMP34-WMP34UITests/Pods-WMP34-WMP34UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		503E3B5724A66249004636C0 /* autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = autocorrect.yml; path = "../../../../../Downloads/SwiftLint-LambdaSchool 3/autocorrect.yml"; sourceTree = "<group>"; };
 		5051734024A1487C004F068B /* RegisterNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewUserViewController.swift; sourceTree = "<group>"; };
 		5051734224A148F8004F068B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5051734424A271A1004F068B /* Login-Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Login-Register.storyboard"; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		7FD5815524A5B46D00A39EBF /* MockDataLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoading.swift; sourceTree = "<group>"; };
 		7FD5815724A5B57500A39EBF /* mockJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockJSON.swift; sourceTree = "<group>"; };
 		7FD5815C24A5C82100A39EBF /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftlint.yml; path = Storyboards/swiftlint.yml; sourceTree = "<group>"; };
-		7FD5815E24A5C96800A39EBF /* autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = autocorrect.yml; path = "../../../../../../Downloads/SwiftLint-LambdaSchool/autocorrect.yml"; sourceTree = "<group>"; };
 		852C2278C4E31D71152DF0AF /* Pods-WMP34-WMP34UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34-WMP34UITests.release.xcconfig"; path = "Target Support Files/Pods-WMP34-WMP34UITests/Pods-WMP34-WMP34UITests.release.xcconfig"; sourceTree = "<group>"; };
 		9934D15663FFE192B3287BEB /* Pods_WMP34.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WMP34.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAFA11324A3FE60005FC95F /* WMP 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMP 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 				C4BF41F024A1466C0070FCE9 /* Cells */,
 				C4BF41E624A1320C0070FCE9 /* Storyboards */,
 				7FD5815C24A5C82100A39EBF /* swiftlint.yml */,
-				7FD5815E24A5C96800A39EBF /* autocorrect.yml */,
+				503E3B5724A66249004636C0 /* autocorrect.yml */,
 				7F92789A24A1113700E22D33 /* AppDelegate.swift */,
 				7F92789C24A1113700E22D33 /* SceneDelegate.swift */,
 				7F9278A024A1113800E22D33 /* Main.storyboard */,
@@ -418,7 +418,7 @@
 			files = (
 				50866C3424A52D6500F5B028 /* ColorSet.xcassets in Resources */,
 				7FD5815D24A5C82100A39EBF /* swiftlint.yml in Resources */,
-				7FD5815F24A5C96800A39EBF /* autocorrect.yml in Resources */,
+				503E3B5824A66249004636C0 /* autocorrect.yml in Resources */,
 				7F9278AA24A1113800E22D33 /* LaunchScreen.storyboard in Resources */,
 				5051734524A271A1004F068B /* Login-Register.storyboard in Resources */,
 				7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */,
