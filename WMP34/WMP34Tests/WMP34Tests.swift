@@ -59,10 +59,14 @@ class WMP34Tests: XCTestCase {
                XCTAssertFalse(controller.plants.count == 1)
                wait(for: [expectation], timeout: 10)
     }
-    func testValidLoginJSON() {
+    func testinValidLoginJSON() {
         let expectation = self.expectation(description: "TestingJSON")
         let dataLoader = MockDataLoader(data: registerRequest, error: nil, response: nil)
-        let client = UserController
-        
+        let client = UserController(dataLoader: dataLoader)
+        client.loginUser(username: "vincent", password: "12345")
+        XCTAssertNil(client.token?.access_token)
+        expectation.fulfill()
+        wait(for: [expectation], timeout: 10)
     }
+    
 }
