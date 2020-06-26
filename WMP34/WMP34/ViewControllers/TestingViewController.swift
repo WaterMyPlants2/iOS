@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// swiftlint:disable all
 class TestingViewController: UIViewController {
     
     var collectionView: UICollectionView?

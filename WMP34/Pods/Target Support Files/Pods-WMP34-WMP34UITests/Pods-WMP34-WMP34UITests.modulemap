@@ -1,0 +1,6 @@
+framework module Pods_WMP34_WMP34UITests {
+  umbrella header "Pods-WMP34-WMP34UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
