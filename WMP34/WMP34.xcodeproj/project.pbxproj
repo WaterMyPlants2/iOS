@@ -274,7 +274,7 @@
 		C4BF41E624A1320C0070FCE9 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5051734424A271A1004F068B /* Login-Register.storyboard */,
+				C4BF41E724A132E20070FCE9 /* MyPlantsTableView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -420,8 +420,8 @@
 				7FD5815D24A5C82100A39EBF /* swiftlint.yml in Resources */,
 				7FD5815F24A5C96800A39EBF /* autocorrect.yml in Resources */,
 				7F9278AA24A1113800E22D33 /* LaunchScreen.storyboard in Resources */,
-				5051734524A271A1004F068B /* Login-Register.storyboard in Resources */,
 				7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */,
+				C4BF41E824A132E20070FCE9 /* MyPlantsTableView.storyboard in Resources */,
 				7F9278A224A1113800E22D33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Plants-->
-        <scene sceneID="NF3-c2-jhB">
+        <!--RegisterNewUser-->
+        <scene sceneID="Jh1-ny-FZb">
             <objects>
                 <tableViewController id="bIp-Lx-Qlb" customClass="UserPlantListTableViewController" customModule="WMP34" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NLx-94-8q0">
@@ -240,7 +240,7 @@
                         <outlet property="speciesTextField" destination="cD6-O8-U3X" id="Xeg-Lc-jRG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gQW-wc-yFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWc-hG-twm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3224.6376811594205" y="-313.39285714285711"/>
         </scene>
