@@ -19,16 +19,50 @@ class WMP34Tests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testLoginFailure() throws {
+        let controller = UserController()
+        let expectation = XCTestExpectation(description: "Could not log in Vincent")
+        controller.loginUser(username: "vincent", password: "⚠️not Vincents password") { _ in
+            XCTAssertFalse(controller.token != nil)
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 10)
     }
-
+    
+    func testLoginSuccess() throws {
+           let controller = UserController()
+           let expectation = XCTestExpectation(description: "Logged in Vincent")
+           controller.loginUser(username: "vincent", password: "12345") { _ in
+               XCTAssertTrue(controller.token != nil)
+               expectation.fulfill()
+           }
+           wait(for: [expectation], timeout: 10)
+       }
+    
+    func testValidPlant() {
+        let expectation = self.expectation(description: "Waiting for data")
+        let controller = PlantController()
+        let plant = Plant(nickname: "testplant", species: "fake", image: "testimage", h2ofrequency: "everyday")
+        controller.deletePlantFromServer(plant: plant)
+        controller.fetchPlantsFromServer()
+        expectation.fulfill()
+        XCTAssertTrue(controller.plants.count == 0)
+        wait(for: [expectation], timeout: 10)
+    }
+    func testInvalidPlant() {
+        let expectation = self.expectation(description: "Waiting for data")
+               let controller = PlantController()
+               let plant = Plant(nickname: "testplant", species: "fake", image: "testimage", h2ofrequency: "everyday")
+               controller.deletePlantFromServer(plant: plant)
+               controller.fetchPlantsFromServer()
+               expectation.fulfill()
+               XCTAssertFalse(controller.plants.count == 1)
+               wait(for: [expectation], timeout: 10)
+    }
+    func testValidLoginJSON() {
+        let expectation = self.expectation(description: "TestingJSON")
+        let dataLoader = MockDataLoader(data: registerRequest, error: nil, response: nil)
+        let client = UserController
+        
+    }
 }
