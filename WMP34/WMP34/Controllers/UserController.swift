@@ -1,7 +1,7 @@
 //
 //  UserController.swift
 //  WMP34
-//
+// swiftlint:disable all
 //  Created by Bradley Diroff on 6/23/20.
 //  Copyright © 2020 Casanova Studios. All rights reserved.
 //

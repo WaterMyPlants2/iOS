@@ -7,9 +7,10 @@
 //
 
 import Foundation
-
+// swiftlint:disable all
 struct LoginRepresentation: Codable {
     let access_token: String
     let token_type: String
     let scope: String
 }
+// swiftlint:enable all

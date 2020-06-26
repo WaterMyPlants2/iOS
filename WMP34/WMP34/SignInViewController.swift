@@ -5,16 +5,14 @@
 //  Created by Kelson Hartle on 6/22/20.
 //  Copyright © 2020 Casanova Studios. All rights reserved.
 //
-
+// swiftlint:disable all
 import UIKit
 
 class SignInViewController: UIViewController {
-    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
     let userController = UserController.shared
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,14 +22,12 @@ class SignInViewController: UIViewController {
         passwordTextField.autocorrectionType = .no
         usernameTextField.becomeFirstResponder()
     }
-    
     @IBAction func login(_ sender: UIButton) {
         guard let username = usernameTextField.text,
         !username.isEmpty,
             let password = passwordTextField.text,
             !password.isEmpty
              else {
-                                
                 showAlert(title: "Unable to Login", message: "Please try again.")
                 return
         }

@@ -9,23 +9,18 @@
 import UIKit
 
 class RegisterNewUserViewController: UIViewController {
-    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var phonenumberTextField: UITextField!
-    
     let userController = UserController.shared
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         usernameTextField.autocapitalizationType = .none
         usernameTextField.autocorrectionType = .no
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
         usernameTextField.becomeFirstResponder()
     }
-    
     @IBAction func registerNewUser(_ sender: UIButton) {
         guard let username = usernameTextField.text,
         !username.isEmpty,
@@ -33,33 +28,32 @@ class RegisterNewUserViewController: UIViewController {
             !password.isEmpty,
             let phonenumber = phonenumberTextField.text,
             !phonenumber.isEmpty else {
-                                
                 showAlert(title: "Unable to register!", message: "Please fill in all fields before moving on.")
                 return
         }
-        
         userController.registerUser(username: username, password: password, phonenumber: phonenumber) { (result) in
             switch result {
+                // swiftlint:disable all
             case .success(_):
+                // swiftlint:enable all
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "ShowLoginVC", sender: nil)
                 }
+                // swiftlint:disable all
             case .failure(_):
+                // swiftlint:enable all
                 DispatchQueue.main.async {
                     self.showAlert(title: "Unable to register!", message: "Unable to register, try again later.")
                 }
             }
         }
     }
-    
     // MARK: - Helper methods
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alert, animated: true, completion: nil)
     }
-    
-
     /*
     // MARK: - Navigation
 

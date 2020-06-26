@@ -28,7 +28,6 @@ class WMP34Tests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10)
     }
-    
     func testLoginSuccess() throws {
            let controller = UserController()
            let expectation = XCTestExpectation(description: "Logged in Vincent")
@@ -38,7 +37,6 @@ class WMP34Tests: XCTestCase {
            }
            wait(for: [expectation], timeout: 10)
        }
-    
     func testValidPlant() {
         let expectation = self.expectation(description: "Waiting for data")
         let controller = PlantController()
@@ -68,5 +66,4 @@ class WMP34Tests: XCTestCase {
         expectation.fulfill()
         wait(for: [expectation], timeout: 10)
     }
-    
 }

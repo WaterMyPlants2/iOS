@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38BE686601364EDBCF972267 /* Pods_WMP34_WMP34UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7313B8A82B334F5D76A94F8 /* Pods_WMP34_WMP34UITests.framework */; };
 		5051734124A1487C004F068B /* RegisterNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051734024A1487C004F068B /* RegisterNewUserViewController.swift */; };
 		5051734324A148F9004F068B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051734224A148F8004F068B /* SignInViewController.swift */; };
 		5051734524A271A1004F068B /* Login-Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5051734424A271A1004F068B /* Login-Register.storyboard */; };
@@ -27,6 +28,10 @@
 		7F9278C024A1113800E22D33 /* WMP34UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9278BF24A1113800E22D33 /* WMP34UITests.swift */; };
 		7FD5815624A5B46D00A39EBF /* MockDataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5815524A5B46D00A39EBF /* MockDataLoading.swift */; };
 		7FD5815824A5B57500A39EBF /* mockJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5815724A5B57500A39EBF /* mockJSON.swift */; };
+		7FD5815D24A5C82100A39EBF /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5815C24A5C82100A39EBF /* swiftlint.yml */; };
+		7FD5815F24A5C96800A39EBF /* autocorrect.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7FD5815E24A5C96800A39EBF /* autocorrect.yml */; };
+		A7DACD557296A981AA2C5391 /* Pods_WMP34.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9934D15663FFE192B3287BEB /* Pods_WMP34.framework */; };
+		AFC7410D1CF41C1AF4DD1862 /* Pods_WMP34Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A64C6C88780541B05D2DD20 /* Pods_WMP34Tests.framework */; };
 		BEAFA11524A406D0005FC95F /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFA11424A406D0005FC95F /* Plant+Convenience.swift */; };
 		BEAFA11724A408E8005FC95F /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAFA11624A408E8005FC95F /* PlantRepresentation.swift */; };
 		C45488A024A2744800C29ACE /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C454889F24A2744800C29ACE /* User+Convenience.swift */; };
@@ -58,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01CC6ABDE1E3E7B7AF88B9D7 /* Pods-WMP34.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34.release.xcconfig"; path = "Target Support Files/Pods-WMP34/Pods-WMP34.release.xcconfig"; sourceTree = "<group>"; };
+		0A64C6C88780541B05D2DD20 /* Pods_WMP34Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WMP34Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D05E712DC437730AB7F0AB /* Pods-WMP34-WMP34UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34-WMP34UITests.debug.xcconfig"; path = "Target Support Files/Pods-WMP34-WMP34UITests/Pods-WMP34-WMP34UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5051734024A1487C004F068B /* RegisterNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewUserViewController.swift; sourceTree = "<group>"; };
 		5051734224A148F8004F068B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5051734424A271A1004F068B /* Login-Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Login-Register.storyboard"; sourceTree = "<group>"; };
@@ -66,6 +74,8 @@
 		5051734C24A2A0E7004F068B /* UserPlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlantTableViewCell.swift; sourceTree = "<group>"; };
 		50866C3124A46DAF00F5B028 /* CreateNewPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPlantViewController.swift; sourceTree = "<group>"; };
 		50866C3324A52D6500F5B028 /* ColorSet.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorSet.xcassets; sourceTree = "<group>"; };
+		6650673FABCBBA2968E81E45 /* Pods-WMP34Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34Tests.release.xcconfig"; path = "Target Support Files/Pods-WMP34Tests/Pods-WMP34Tests.release.xcconfig"; sourceTree = "<group>"; };
+		70F4B5428EC2BCE0509C1DEE /* Pods-WMP34.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34.debug.xcconfig"; path = "Target Support Files/Pods-WMP34/Pods-WMP34.debug.xcconfig"; sourceTree = "<group>"; };
 		7F6B076C24A17A8B00975947 /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
 		7F6B076E24A17AA000975947 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		7F92789724A1113700E22D33 /* WMP34.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WMP34.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +94,10 @@
 		7F9278C124A1113800E22D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD5815524A5B46D00A39EBF /* MockDataLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoading.swift; sourceTree = "<group>"; };
 		7FD5815724A5B57500A39EBF /* mockJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockJSON.swift; sourceTree = "<group>"; };
+		7FD5815C24A5C82100A39EBF /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftlint.yml; path = Storyboards/swiftlint.yml; sourceTree = "<group>"; };
+		7FD5815E24A5C96800A39EBF /* autocorrect.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = autocorrect.yml; path = "../../../../../../Downloads/SwiftLint-LambdaSchool/autocorrect.yml"; sourceTree = "<group>"; };
+		852C2278C4E31D71152DF0AF /* Pods-WMP34-WMP34UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34-WMP34UITests.release.xcconfig"; path = "Target Support Files/Pods-WMP34-WMP34UITests/Pods-WMP34-WMP34UITests.release.xcconfig"; sourceTree = "<group>"; };
+		9934D15663FFE192B3287BEB /* Pods_WMP34.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WMP34.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAFA11324A3FE60005FC95F /* WMP 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMP 2.xcdatamodel"; sourceTree = "<group>"; };
 		BEAFA11424A406D0005FC95F /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		BEAFA11624A408E8005FC95F /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
@@ -96,6 +110,8 @@
 		C45488AC24A2766F00C29ACE /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		C4BF41EE24A145D60070FCE9 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		C4BF41F124A146860070FCE9 /* MyPlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7313B8A82B334F5D76A94F8 /* Pods_WMP34_WMP34UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WMP34_WMP34UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80ED2978ACD09C492DA78C8 /* Pods-WMP34Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WMP34Tests.debug.xcconfig"; path = "Target Support Files/Pods-WMP34Tests/Pods-WMP34Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7DACD557296A981AA2C5391 /* Pods_WMP34.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC7410D1CF41C1AF4DD1862 /* Pods_WMP34Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,12 +135,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BE686601364EDBCF972267 /* Pods_WMP34_WMP34UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E07DE8BBA8C7623C5509F2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9934D15663FFE192B3287BEB /* Pods_WMP34.framework */,
+				E7313B8A82B334F5D76A94F8 /* Pods_WMP34_WMP34UITests.framework */,
+				0A64C6C88780541B05D2DD20 /* Pods_WMP34Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F6B076B24A17A7800975947 /* Mocking */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +170,8 @@
 				7F9278B324A1113800E22D33 /* WMP34Tests */,
 				7F9278BE24A1113800E22D33 /* WMP34UITests */,
 				7F92789824A1113700E22D33 /* Products */,
+				DA536A284085795E6B075CB5 /* Pods */,
+				4E07DE8BBA8C7623C5509F2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +194,8 @@
 				C4BF41F324A1468B0070FCE9 /* ViewControllers */,
 				C4BF41F024A1466C0070FCE9 /* Cells */,
 				C4BF41E624A1320C0070FCE9 /* Storyboards */,
+				7FD5815C24A5C82100A39EBF /* swiftlint.yml */,
+				7FD5815E24A5C96800A39EBF /* autocorrect.yml */,
 				7F92789A24A1113700E22D33 /* AppDelegate.swift */,
 				7F92789C24A1113700E22D33 /* SceneDelegate.swift */,
 				7F9278A024A1113800E22D33 /* Main.storyboard */,
@@ -262,6 +295,19 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		DA536A284085795E6B075CB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70F4B5428EC2BCE0509C1DEE /* Pods-WMP34.debug.xcconfig */,
+				01CC6ABDE1E3E7B7AF88B9D7 /* Pods-WMP34.release.xcconfig */,
+				44D05E712DC437730AB7F0AB /* Pods-WMP34-WMP34UITests.debug.xcconfig */,
+				852C2278C4E31D71152DF0AF /* Pods-WMP34-WMP34UITests.release.xcconfig */,
+				E80ED2978ACD09C492DA78C8 /* Pods-WMP34Tests.debug.xcconfig */,
+				6650673FABCBBA2968E81E45 /* Pods-WMP34Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,9 +315,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F9278C424A1113800E22D33 /* Build configuration list for PBXNativeTarget "WMP34" */;
 			buildPhases = (
+				9FAAAA5175D49052DDFB8BC1 /* [CP] Check Pods Manifest.lock */,
 				7F92789324A1113700E22D33 /* Sources */,
 				7F92789424A1113700E22D33 /* Frameworks */,
 				7F92789524A1113700E22D33 /* Resources */,
+				7FD5815924A5C48F00A39EBF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -286,6 +334,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F9278C724A1113800E22D33 /* Build configuration list for PBXNativeTarget "WMP34Tests" */;
 			buildPhases = (
+				58553C8361934510353F4D0F /* [CP] Check Pods Manifest.lock */,
 				7F9278AC24A1113800E22D33 /* Sources */,
 				7F9278AD24A1113800E22D33 /* Frameworks */,
 				7F9278AE24A1113800E22D33 /* Resources */,
@@ -304,6 +353,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F9278CA24A1113800E22D33 /* Build configuration list for PBXNativeTarget "WMP34UITests" */;
 			buildPhases = (
+				EE972D5DD49139FA400D2FB0 /* [CP] Check Pods Manifest.lock */,
 				7F9278B724A1113800E22D33 /* Sources */,
 				7F9278B824A1113800E22D33 /* Frameworks */,
 				7F9278B924A1113800E22D33 /* Resources */,
@@ -367,6 +417,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				50866C3424A52D6500F5B028 /* ColorSet.xcassets in Resources */,
+				7FD5815D24A5C82100A39EBF /* swiftlint.yml in Resources */,
+				7FD5815F24A5C96800A39EBF /* autocorrect.yml in Resources */,
 				7F9278AA24A1113800E22D33 /* LaunchScreen.storyboard in Resources */,
 				5051734524A271A1004F068B /* Login-Register.storyboard in Resources */,
 				7F9278A724A1113800E22D33 /* Assets.xcassets in Resources */,
@@ -389,6 +441,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58553C8361934510353F4D0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WMP34Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FD5815924A5C48F00A39EBF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		9FAAAA5175D49052DDFB8BC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WMP34-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE972D5DD49139FA400D2FB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WMP34-WMP34UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F92789324A1113700E22D33 /* Sources */ = {
@@ -589,6 +727,7 @@
 		};
 		7F9278C524A1113800E22D33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70F4B5428EC2BCE0509C1DEE /* Pods-WMP34.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -607,6 +746,7 @@
 		};
 		7F9278C624A1113800E22D33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01CC6ABDE1E3E7B7AF88B9D7 /* Pods-WMP34.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -625,6 +765,7 @@
 		};
 		7F9278C824A1113800E22D33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E80ED2978ACD09C492DA78C8 /* Pods-WMP34Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -646,6 +787,7 @@
 		};
 		7F9278C924A1113800E22D33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6650673FABCBBA2968E81E45 /* Pods-WMP34Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -667,6 +809,7 @@
 		};
 		7F9278CB24A1113800E22D33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44D05E712DC437730AB7F0AB /* Pods-WMP34-WMP34UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -687,6 +830,7 @@
 		};
 		7F9278CC24A1113800E22D33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 852C2278C4E31D71152DF0AF /* Pods-WMP34-WMP34UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

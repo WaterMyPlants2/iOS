@@ -1,7 +1,7 @@
 //
 //  SceneDelegate.swift
 //  WMP34
-//
+// swiftlint:disable all
 //  Created by Ezra Black on 6/22/20.
 //  Copyright © 2020 Casanova Studios. All rights reserved.
 //
