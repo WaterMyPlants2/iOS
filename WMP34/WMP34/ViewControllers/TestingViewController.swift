@@ -118,9 +118,7 @@ class TestingViewController: UIViewController {
     }
     
     func bringInCollectionView() {
-        print("about to check a collectionview")
         if collectionView == nil {
-            print("collectionview was nil")
             makeCollectionView()
             collectionView?.dataSource = self
             collectionView?.delegate = self
